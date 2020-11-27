@@ -1,37 +1,103 @@
-# lunengWeb
+### 官方文档
+```
+https://panjiachen.github.io/vue-element-admin-site/zh/
+```
+[组件文档](./README.components.md) 
+## 安装依赖
+```
+npm install
+# 建议不要直接使用 cnpm 安装依赖，会有各种诡异的 bug。可以通过如下操作解决 npm 下载速度慢的问题
+npm install --registry=https://registry.npm.taobao.org
 
-#### 介绍
-鲁能项目
+```
 
-#### 软件架构
-软件架构说明
+### 运行项目
+```
+npm run serve
+```
 
+### 项目打包
+```
+npm run build:prod
+```
 
-#### 安装教程
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+### 目录结构说明
+```
+├─ build    // 构建相关
+│ └── index.js
+│
+├─ public    // 静态页面
+│ │── favicon.ico    // favicon图标
+│ │── index.html    // html模板
+│ └── robots.txt    // 禁止爬虫
+│
+├─ src    // 主目录
+│ ├── api    // 所有请求
+│ ├── assets    // 静态资源
+│ ├── components    // 全局公用组件
+│ ├── directive    // 全局指令
+│ ├── filters    // 全局过滤器
+│ ├── icons    // 项目所有 svg icons
+│ ├── lang    // 国际化 language
+│ ├── layout    // 全局 layout
+│ ├── router    // 路由
+│ ├── store    // 全局 store管理
+│ ├── styles    // 全局样式
+│ ├── utils    // 全局公用工具类
+│ ├── views    // views 所有页面
+│ ├── App.vue    // 入口页面
+│ ├── main.js    // 入口文件 加载组件 初始化等
+│ ├── permission.js    // 权限管理
+│ └── settings.js    // 基础设置
+├─ .editorconfig    // ide 配置
+├─ .env.xxx    // 环境变量配置
+├─ vue.config.js    // webpack 配置
+├─ .eslintrc.js    // eslint 配置项
+├─ .babelrc    // babel-loader 配置
+├─ .travis.yml    // 自动化CI配置
+├── postcss.config.js    // postcss 配置
+└── package.json    // package.json
+```
+### 自定义权限指令
+```
+例：
+<el-tag v-permission="['admin']">admin</el-tag>
+v-permission="['admin']，该指令可以指定哪些角色能看的<el-tag/>
+v-permission="['admin','editor']"，可以指定多个角色
+该指令有局限性，类似于 <el-tab/> 就只能使用 v-if 指令
+```
+### 自定义全局权限函数
+```
+例：
+<el-tag v-if="checkPermission(['admin'])">admin</el-tag>
+v-if="checkPermission(['admin'])"，该指令可以指定哪些角色能看的<el-tag/>
+v-if="checkPermission(['admin','editor'])"，可以指定多个角色
+```
+### 自定义波浪特效指令
+```
+例：
+<el-button v-waves type="primary">
+v-waves
+```
+### 自定义复制到剪贴板指令
+```
+例：
+<el-button v-clipboard:copy="inputData" v-clipboard:success="clipboardSuccess" type="primary" icon="el-icon-document">
+   copy
+</el-button>
+v-clipboard
+```
+### 自定义可拖拽弹窗指令
+```
+例：
+<el-dialog v-el-drag-dialog :visible.sync="dialogTableVisible" title="Shipping address" @dragDialog="handleDrag">
+</el-dialog>
+v-el-drag-dialog
+```
+### 自定义高度自适应表指令
+```
+例：
+<el-table height="100px" v-el-height-adaptive-table="{bottomOffset: 30}">...</el-table>
+v-el-height-adaptive-table
+el-table height is must be set  表高度必须设置
+```

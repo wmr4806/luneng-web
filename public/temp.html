@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="renderer" content="webkit" />
+    <meta
+      name="viewport"
+      content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=no"
+    />
+    <title>FORGE 3D</title>
+    <!-- 4.2.4 -->
+    <style>
+      .my-view-front-button {
+        background-image: url("Scripts/images/image.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 24px;
+      }
+    </style>
+  </head>
+  <body style="margin:0px">
+    <!-- <div id="viewer">1111111111</div> -->
+  </body>
+  <!-- <script src="../src/main.js"></script> -->
+  <script>
+    console.log("本地ln");
+    var id = getPrame("id");
+    function getPrame(name) {
+      var url = document.location.href.toString();
+      var arrObj = url.split("?");
+      if (arrObj.length > 1) {
+        var arrPara = arrObj[1].split("&");
+        console.log("arrPara", arrPara);
+        var callbackId = arrPara[0].split("=")[1];
+        var objArr = JSON.parse(decodeURI(arrPara[1].split("=")[1]));
+        window.parent.parent["handleBim"](callbackId, objArr);
+        console.log("test");
+        return "";
+      } else {
+        return "";
+      }
+    }
+
+    // console.log("本地test")
+    //  var id=getPrame("id");
+
+    // //  var  type=getPrame("type");
+
+    //  console.log(id);
+    // //  console.log(type);
+
+    // function  getPrame(name){
+
+    // console.log("id")
+    // var url=document.location.href.toString();
+    // console.log(url)
+
+    // var arrObj=url.split("?");
+
+    // if(arrObj.length>1){
+
+    // var arrPara=arrObj[1].split("&");
+    // var callbackId = arrPara[0].split('=')[1]
+    // window.parent.parent['handleBim'](callbackId)
+    // console.log('test');
+
+    // // parent.parent['handleBim'](decodeURIComponent(arrPara))
+
+    // var arr;
+
+    // // for(var i=0;i<arrPara.length;i++){
+    // //  arr=arrPara[i].split("=");
+    // //  console.log(arr)
+    // //  if(arr!=null &&arr[0]==name){
+    // //  return arr[1];
+
+    // //  }
+    // //  }
+    //  return "";
+
+    //  }
+    //  else{
+    //  return ""
+
+    //  }
+
+    // }
+  </script>
+</html>
