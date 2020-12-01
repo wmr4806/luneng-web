@@ -154,7 +154,7 @@
     <el-dialog
       title="工单详情"
       :visible.sync="detailDialog.visible"
-      style="width: 120%; left: -10%;background-color:red"
+      style="width: 120%; left: -10%;"
     >
       <el-table
         :data="gridDa"

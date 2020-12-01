@@ -238,6 +238,12 @@ export default {
   },
   mounted() {
     this.getuserabcd(this.value)
+    this.$nextTick(() => {
+      const s_table = document.getElementsByClassName(
+        'el-table__footer-wrapper'
+      )[0]
+      s_table.setAttribute('style', 'font-weight:800')
+    })
   },
   methods: {
     tableRowClassName({ row, rowIndex }) {

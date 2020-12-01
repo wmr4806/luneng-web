@@ -224,7 +224,7 @@ export default {
       LuNeng: LuNeng,
       loginForm: {
         loginName: process.env.NODE_ENV === 'production' ? '' : 'devtest',
-        password: process.env.NODE_ENV === 'production' ? '' : 'Guojia.1234',
+        password: process.env.NODE_ENV === 'production' ? '' : 'Guojia.12345',
         code: ''
       },
       identifyCodes: '234567890',

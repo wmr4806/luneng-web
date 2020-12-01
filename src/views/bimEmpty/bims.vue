@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-    <div  @mouseleave="mouseLeave" v-if="selectIsShow" class="selectbtn">
+    <div @mouseleave="mouseLeave" v-if="selectIsShow" class="selectbtn">
       <!-- <a href="http://datav.aliyuncs.com/share/279199f96c3e159c9e706c042d837706" class="ahref">回到大屏</a> -->
-      <a  class="ahref ahref1" @click="$router.push('/')">返 回</a>
+      <a class="ahref ahref1" @click="$router.push('/')">返 回</a>
       <el-select
         ref="isSelectBuild"
         v-model="building"
@@ -19,7 +19,7 @@
         />
       </el-select>
       <el-select
-      ref="isSelectFloor"
+        ref="isSelectFloor"
         v-model="floor"
         placeholder="请选择"
         popper-class="select-option"
@@ -31,7 +31,6 @@
           :key="value"
           :label="label"
           :value="value"
-          
         />
       </el-select>
       <!-- <div class="ahref ahref2">总览</div>
@@ -220,43 +219,43 @@
         <div style="color: #ffffff">
           CO2浓度：{{
             ahu1Data[`AHU${building}-${floor}-1-CO2_CV`] &&
-            ahu1Data[`AHU${building}-${floor}-1-CO2_CV`].value
+              ahu1Data[`AHU${building}-${floor}-1-CO2_CV`].value
           }}ppm
         </div>
         <div style="color: #ffffff">
           回风温度：{{
             ahu1Data[`AHU${building}-${floor}-1-RT_CV`] &&
-            ahu1Data[`AHU${building}-${floor}-1-RT_CV`].value
+              ahu1Data[`AHU${building}-${floor}-1-RT_CV`].value
           }}℃
         </div>
         <div style="color: #ffffff">
           回风湿度：{{
             ahu1Data[`AHU${building}-${floor}-1-RH_CV`] &&
-            ahu1Data[`AHU${building}-${floor}-1-RH_CV`].value
+              ahu1Data[`AHU${building}-${floor}-1-RH_CV`].value
           }}%
         </div>
         <div style="color: #ffffff">
           送风温度：{{
             ahu1Data[`AHU${building}-${floor}-1-ST_CV`] &&
-            ahu1Data[`AHU${building}-${floor}-1-ST_CV`].value
+              ahu1Data[`AHU${building}-${floor}-1-ST_CV`].value
           }}℃
         </div>
         <div style="color: #ffffff">
           送风湿度：{{
             ahu1Data[`AHU${building}-${floor}-1-SH_CV`] &&
-            ahu1Data[`AHU${building}-${floor}-1-SH_CV`].value
+              ahu1Data[`AHU${building}-${floor}-1-SH_CV`].value
           }}%
         </div>
         <div style="color: #ffffff">
           送风压力：{{
             ahu1Data[`AHU${building}-${floor}-1-SP1_CV`] &&
-            ahu1Data[`AHU${building}-${floor}-1-SP1_CV`].value
+              ahu1Data[`AHU${building}-${floor}-1-SP1_CV`].value
           }}Pa
         </div>
         <div style="color: #ffffff">
           频率反馈：{{
             ahu1Data[`AHU${building}-${floor}-1-SF_CV`] &&
-            ahu1Data[`AHU${building}-${floor}-1-SF_CV`].value
+              ahu1Data[`AHU${building}-${floor}-1-SF_CV`].value
           }}Hz
         </div>
         <div style="color: #ffffff">
@@ -284,43 +283,43 @@
         <div style="color: #ffffff">
           CO2浓度：{{
             ahu2Data[`AHU${building}-${floor}-2-CO2_CV`] &&
-            ahu2Data[`AHU${building}-${floor}-2-CO2_CV`].value
+              ahu2Data[`AHU${building}-${floor}-2-CO2_CV`].value
           }}ppm
         </div>
         <div style="color: #ffffff">
           回风温度：{{
             ahu2Data[`AHU${building}-${floor}-2-RT_CV`] &&
-            ahu2Data[`AHU${building}-${floor}-2-RT_CV`].value
+              ahu2Data[`AHU${building}-${floor}-2-RT_CV`].value
           }}℃
         </div>
         <div style="color: #ffffff">
           回风湿度：{{
             ahu2Data[`AHU${building}-${floor}-2-RH_CV`] &&
-            ahu2Data[`AHU${building}-${floor}-2-RH_CV`].value
+              ahu2Data[`AHU${building}-${floor}-2-RH_CV`].value
           }}%
         </div>
         <div style="color: #ffffff">
           送风温度：{{
             ahu2Data[`AHU${building}-${floor}-2-ST_CV`] &&
-            ahu2Data[`AHU${building}-${floor}-2-ST_CV`].value
+              ahu2Data[`AHU${building}-${floor}-2-ST_CV`].value
           }}℃
         </div>
         <div style="color: #ffffff">
           送风湿度：{{
             ahu2Data[`AHU${building}-${floor}-2-SH_CV`] &&
-            ahu2Data[`AHU${building}-${floor}-2-SH_CV`].value
+              ahu2Data[`AHU${building}-${floor}-2-SH_CV`].value
           }}%
         </div>
         <div style="color: #ffffff">
           送风压力：{{
             ahu2Data[`AHU${building}-${floor}-2-SP1_CV`] &&
-            ahu2Data[`AHU${building}-${floor}-2-SP1_CV`].value
+              ahu2Data[`AHU${building}-${floor}-2-SP1_CV`].value
           }}Pa
         </div>
         <div style="color: #ffffff">
           频率反馈：{{
             ahu2Data[`AHU${building}-${floor}-2-SF_CV`] &&
-            ahu2Data[`AHU${building}-${floor}-2-SF_CV`].value
+              ahu2Data[`AHU${building}-${floor}-2-SF_CV`].value
           }}Hz
         </div>
         <div style="color: #ffffff">
@@ -375,9 +374,15 @@ import {
   getWarmAHUList,
   getAlmEvents,
   getColdSourceList,
-  getHeatSourceList,
+  getHeatSourceList
 } from "@/api/data";
-import { fireObj, ahuAndVavArr, airTotalNum, havcTotalNum, cameraId} from './constant'
+import {
+  fireObj,
+  ahuAndVavArr,
+  airTotalNum,
+  havcTotalNum,
+  cameraId
+} from "./constant";
 import MyVideo from "@/views/ai-security/MyVideo";
 import id from "@/views/bimEmpty/bimId/index";
 import { mapId } from "@/views/ai-BA/mapId";
@@ -394,7 +399,7 @@ const {
   coldAndHeat: { coldAndHeat1, coldAndHeat2 },
   idB4F1: { ahuIdB4F1, fireB4F1 },
   idB4F2: { ahuIdB4F2, vavIdB4F2, fireB4F2 },
-  idB4F3: { cctvId, vavIdB4F3, ahuIdB4F3, fireB4F3 },
+  idB4F3: { cctvId, vavIdB4F3, ahuIdB4F3, fireB4F3 }
   // idB4F4: { ahuIdB4F4, vavIdB4F4, fireB4F4 },
   // idB4F5: { ahuIdB4F5, vavIdB4F5, fireB4F5 },
   // idB4F6: { ahuIdB4F6, vavIdB4F6, fireB4F6 },
@@ -407,29 +412,29 @@ export default {
   filters: {
     toFixedNum(val, num = 1) {
       return Number(val).toFixed(num);
-    },
+    }
   },
   directives: {
-    drag: function (el) {
+    drag: function(el) {
       const dragBox = el;
-      dragBox.onmousedown = (e) => {
+      dragBox.onmousedown = e => {
         const disX = e.clientX - dragBox.offsetLeft;
         const disY = e.clientY - dragBox.offsetTop;
-        document.onmousemove = (e) => {
+        document.onmousemove = e => {
           const left = e.clientX - disX;
           const top = e.clientY - disY;
           dragBox.style.left = left + "px";
           dragBox.style.top = top + "px";
         };
-        document.onmouseup = (e) => {
+        document.onmouseup = e => {
           document.onmousemove = null;
           document.onmouseup = null;
         };
       };
-    },
+    }
   },
   components: {
-    MyVideo,
+    MyVideo
   },
   data() {
     return {
@@ -441,12 +446,12 @@ export default {
       buildings: [
         {
           label: `3号楼`,
-          value: 3,
+          value: 3
         },
         {
           label: `4号楼`,
-          value: 4,
-        },
+          value: 4
+        }
       ],
       vavIsShow: false,
       Id: "",
@@ -466,22 +471,42 @@ export default {
       ahu1Data: {},
       ahu2Data: {},
       totalData: {},
-      alarmArrData: [],
+      alarmArrData: []
     };
   },
   computed: {
     bimSrc() {
-      return process.env.NODE_ENV === "development"
-        ? `http://localhost/ForgeViewerA.html?FLURN=B${this.building}F${this.floor}/3d.svf`
-        : `http://101.132.169.245/bim/ForgeViewerA.html?FLURN=B${this.building}F${this.floor}/3d.svf`;
-    },
+      let url_bim = "";
+      if (process.env.NODE_ENV === "development") {
+        if (this.building == 3 && this.floor == 0) {
+          url_bim =
+            "http://101.132.169.245/bim/ForgeViewerA.html?FLURN=https://my-bim.oss-cn-shanghai.aliyuncs.com/bim/B3F0/3d.svf";
+        } else if (this.building == 4 && this.floor == 0) {
+          url_bim =
+            "http://101.132.169.245/bim/ForgeViewerA.html?FLURN=https://my-bim.oss-cn-shanghai.aliyuncs.com/bim/B4F0/3d.svf";
+        } else {
+          url_bim = `http://101.132.169.245/bim/ForgeViewerA.html?FLURN=B${this.building}F${this.floor}/3d.svf`;
+        }
+      } else {
+        if (this.building == 3 && this.floor == 0) {
+          url_bim =
+            "http://101.132.169.245/bim/ForgeViewerA.html?FLURN=https://my-bim.oss-cn-shanghai.aliyuncs.com/bim/B3F0/3d.svf";
+        } else if (this.building == 4 && this.floor == 0) {
+          url_bim =
+            "http://101.132.169.245/bim/ForgeViewerA.html?FLURN=https://my-bim.oss-cn-shanghai.aliyuncs.com/bim/B4F0/3d.svf";
+        } else {
+          url_bim = `http://101.132.169.245/bim/ForgeViewerA.html?FLURN=B${this.building}F${this.floor}/3d.svf`;
+        }
+      }
+      return url_bim;
+    }
   },
   watch: {
-    url: function (val, old) {
+    url: function(val, old) {
       this.$nextTick(() => {
         this.$refs.myVideo.play();
       });
-    },
+    }
   },
   created() {
     window["handleBim"] = (id, child) => {
@@ -506,9 +531,9 @@ export default {
       this.building = bigBuilding;
       this.floor = bigFloor;
       const key = `B${bigBuilding}F${bigFloor}`;
-      const obj = fireObj()
+      const obj = fireObj();
       const arr = [Alarm, obj[key]];
-      arr.forEach((i) => {
+      arr.forEach(i => {
         i.forEach((v, k) => {
           if (bigId === k) {
             setTimeout(() => {
@@ -526,10 +551,10 @@ export default {
       this.floor = floor;
       const key = `B${building}F${floor}`;
 
-      const obj = fireObj()
+      const obj = fireObj();
 
       const arr = [Alarm, obj[key]];
-      arr.forEach((i) => {
+      arr.forEach(i => {
         i.forEach((v, k) => {
           if (id === k) {
             setTimeout(() => {
@@ -541,22 +566,22 @@ export default {
       this.selectIsShow = false;
     } else {
       getAlmEvents(this.building, this.floor)
-        .then((res) => {
+        .then(res => {
           if (res.code === "200") {
             this.alarmArrData = res.data;
             const key = `B${this.building}F${this.floor}`;
-              const obj = fireObj()
+            const obj = fireObj();
             const arr = [Alarm, obj[key]];
 
-            arr.forEach((i) => {
+            arr.forEach(i => {
               i.forEach((v, k) => {
-              res.data.forEach((id) => {
-                if (id === k) {
-                  this.alarmId.push(v);
-                }
+                res.data.forEach(id => {
+                  if (id === k) {
+                    this.alarmId.push(v);
+                  }
+                });
               });
             });
-            })
           }
         })
         .finally(() => {
@@ -570,21 +595,21 @@ export default {
     // 切换楼层时
     getDifferentBim() {
       getAlmEvents(this.building, this.floor)
-        .then((res) => {
+        .then(res => {
           if (res.code === "200") {
             const key = `B${this.building}F${this.floor}`;
-              const obj = fireObj()
+            const obj = fireObj();
             const arr = [Alarm, obj[key]];
 
-            arr.forEach((i) => {
+            arr.forEach(i => {
               i.forEach((v, k) => {
-              res.data.forEach((id) => {
-                if (id === k) {
-                  this.alarmId.push(v);
-                }
+                res.data.forEach(id => {
+                  if (id === k) {
+                    this.alarmId.push(v);
+                  }
+                });
               });
             });
-            })
           }
         })
         .finally(() => {
@@ -594,7 +619,7 @@ export default {
         });
     },
     _getTurnRtspToRtmp(id) {
-      getTurnRtspToRtmp(id).then((res) => {
+      getTurnRtspToRtmp(id).then(res => {
         let data = res && res.data && res.data.split("/TV")[1];
         data =
           "http://101.132.169.245:90/live?port=1935&app=myTV&stream=TV" + data;
@@ -623,7 +648,7 @@ export default {
       this.showHavcTotalNum(id);
       this.showAirTotalNum(id);
       this.showFireTotalNum(id);
-      const camera = cameraId()
+      const camera = cameraId();
       const key = `B${this.building}F${this.floor}`;
       camera[key].forEach((val, key) => {
         if (id === String(val) && key) {
@@ -637,7 +662,7 @@ export default {
             this.ahu2IsShow = false;
           }
           if (id === String(v)) {
-            getWarmAHUList(this.building, this.floor).then((res) => {
+            getWarmAHUList(this.building, this.floor).then(res => {
               if (res.data && v === 5670) {
                 this.ahu2IsShow = true;
                 this.ahu2Data = res.data;
@@ -650,7 +675,7 @@ export default {
       }
     },
     showFireTotalNum(id) {
-      const obj = fireObj()
+      const obj = fireObj();
       const key = `B${this.building}F${this.floor}`;
       if (id !== String(fireNum[`fire${key}`])) {
         this.fireTotalNumShow = false;
@@ -665,7 +690,7 @@ export default {
       }
     },
     showAirTotalNum(id) {
-      const obj = airTotalNum()
+      const obj = airTotalNum();
       const key = `B${this.building}F${this.floor}`;
       if (id !== String(airNum[`air${key}`])) {
         this.airTotalNumShow = false;
@@ -680,7 +705,7 @@ export default {
       }
     },
     showHavcTotalNum(id) {
-      const obj = havcTotalNum()
+      const obj = havcTotalNum();
       const key = `B${this.building}F${this.floor}`;
       if (id !== String(havcNum[`havc${key}`])) {
         this.havcTotalNumShow = false;
@@ -705,7 +730,7 @@ export default {
         const a = child[num];
         const b = child[num - 2];
         const c = [b];
-        this.clickMethod([this.none,...c]);
+        this.clickMethod([this.none, ...c]);
         this.totalData.total = child.length;
         this.totalData.breakdown = c.length;
         this.totalData.normal = child.length - c.length;
@@ -715,7 +740,7 @@ export default {
       }
     },
     showDifferentFloorData(id) {
-      const arr = ahuAndVavArr()
+      const arr = ahuAndVavArr();
       const key = `B${this.building}F${this.floor}`;
       if (key === "B4F-1") {
         arr["B4F-1"].forEach((v, k) => {
@@ -724,10 +749,10 @@ export default {
           }
           if (id === String(v) && (k === "che1" || k === "che2")) {
             const arr = [coldAndHeat1, coldAndHeat2];
-            getColdSourceList("cd").then((res) => {
+            getColdSourceList("cd").then(res => {
               this.coldAndHeatData = [];
-              arr.forEach((key) => {
-                key.forEach((item) => {
+              arr.forEach(key => {
+                key.forEach(item => {
                   item["value"] = res.data[item.id].value;
                 });
               });
@@ -741,16 +766,16 @@ export default {
             });
           } else if (id === String(v) && (k === "hhe1" || k === "hhe2")) {
             const arr = [coldAndHeat1, coldAndHeat2];
-            getHeatSourceList("cd").then((res) => {
+            getHeatSourceList("cd").then(res => {
               this.coldAndHeatData = [];
               const mapData = {};
               mapId.forEach((val, key) => {
                 mapData[key] = {
-                  value: res.data[val].value,
+                  value: res.data[val].value
                 };
               });
-              arr.forEach((key) => {
-                key.forEach((item) => {
+              arr.forEach(key => {
+                key.forEach(item => {
                   item["value"] = mapData[item.id].value;
                 });
               });
@@ -773,7 +798,7 @@ export default {
             this.vavIsShow = false;
           }
           if (id === String(v)) {
-            getVAVList(this.building, this.floor).then((res) => {
+            getVAVList(this.building, this.floor).then(res => {
               this.vavData = res.data[k];
               if (res.data[k]) {
                 this.vavIsShow = true;
@@ -787,55 +812,68 @@ export default {
             this.ahu2IsShow = false;
           }
           if (id === String(v)) {
-            getWarmAHUList(this.building, this.floor).then((res) => {
+            getWarmAHUList(this.building, this.floor).then(res => {
               // 处理id 不规则问题
-          let handleData = {}
-          const obj1 = {}
-          const obj2 = {}
-          if (this.building === 3 && this.floor < 10) {
-          for (const item in res.data) {
-            if (item.indexOf(`UEC73${this.floor}61`) !== -1) {
-              const key = item.replace(`UEC73${this.floor}61:`, `AHU3-${this.floor}-1-`)
-              const value = res.data[item]
-              obj2[key] = value
-            } else {
-              obj1[item] = res.data[item]
-            }
-          }
-          handleData = { ...obj1, ...obj2 }
-        } else if (this.building === 3 && this.floor >= 10 && this.floor < 20) {
-          for (const item in res.data) {
-            if (item.indexOf(`UEC72${this.floor - 10}61`) !== -1) {
-              const key = item.replace(`UEC72${this.floor - 10}61:`, `AHU3-${this.floor}-1-`)
-              const value = res.data[item]
-              obj2[key] = value
-            } else {
-              obj1[item] = res.data[item]
-            }
-          }
-          handleData = { ...obj1, ...obj2 }
-        } else if (this.building === 3 && this.floor >= 20) {
-          for (const item in res.data) {
-            if (item.indexOf(`UEC71${this.floor - 20}61`) !== -1) {
-              const key = item.replace(`UEC71${this.floor - 20}61:`, `AHU3-${this.floor}-1-`)
-              const value = res.data[item]
-              obj2[key] = value
-            } else {
-              obj1[item] = res.data[item]
-            }
-          }
-          handleData = { ...obj1, ...obj2 }
-        } else {
-          handleData = { ...res.data }
-        }
+              let handleData = {};
+              const obj1 = {};
+              const obj2 = {};
+              if (this.building === 3 && this.floor < 10) {
+                for (const item in res.data) {
+                  if (item.indexOf(`UEC73${this.floor}61`) !== -1) {
+                    const key = item.replace(
+                      `UEC73${this.floor}61:`,
+                      `AHU3-${this.floor}-1-`
+                    );
+                    const value = res.data[item];
+                    obj2[key] = value;
+                  } else {
+                    obj1[item] = res.data[item];
+                  }
+                }
+                handleData = { ...obj1, ...obj2 };
+              } else if (
+                this.building === 3 &&
+                this.floor >= 10 &&
+                this.floor < 20
+              ) {
+                for (const item in res.data) {
+                  if (item.indexOf(`UEC72${this.floor - 10}61`) !== -1) {
+                    const key = item.replace(
+                      `UEC72${this.floor - 10}61:`,
+                      `AHU3-${this.floor}-1-`
+                    );
+                    const value = res.data[item];
+                    obj2[key] = value;
+                  } else {
+                    obj1[item] = res.data[item];
+                  }
+                }
+                handleData = { ...obj1, ...obj2 };
+              } else if (this.building === 3 && this.floor >= 20) {
+                for (const item in res.data) {
+                  if (item.indexOf(`UEC71${this.floor - 20}61`) !== -1) {
+                    const key = item.replace(
+                      `UEC71${this.floor - 20}61:`,
+                      `AHU3-${this.floor}-1-`
+                    );
+                    const value = res.data[item];
+                    obj2[key] = value;
+                  } else {
+                    obj1[item] = res.data[item];
+                  }
+                }
+                handleData = { ...obj1, ...obj2 };
+              } else {
+                handleData = { ...res.data };
+              }
 
-        if (res.data && k === `B${this.building}F${this.floor}1`) {
-          this.ahu1IsShow = true;
-          this.ahu1Data = handleData;
-        } else if (res.data && k === `B${this.building}F${this.floor}2`) {
-          this.ahu2IsShow = true;
-          this.ahu2Data = handleData;
-        }
+              if (res.data && k === `B${this.building}F${this.floor}1`) {
+                this.ahu1IsShow = true;
+                this.ahu1Data = handleData;
+              } else if (res.data && k === `B${this.building}F${this.floor}2`) {
+                this.ahu2IsShow = true;
+                this.ahu2Data = handleData;
+              }
             });
           }
         });
@@ -883,14 +921,18 @@ export default {
     getFloor4() {
       const f = new Array(22).fill(-1).map((item, index) => ({
         label: `第${index + 1}层`,
-        value: index + 1,
+        value: index + 1
       }));
-      this.floors = [{ label: "整栋", value: 0 },...f,{ label: "RF", value: 23 }];
+      this.floors = [
+        { label: "整栋", value: 0 },
+        ...f,
+        { label: "RF", value: 23 }
+      ];
     },
     getFloor3() {
       const f = new Array(8).fill(-1).map((item, index) => ({
         label: `第${index + 1}层`,
-        value: index + 1,
+        value: index + 1
       }));
       this.floors = [
         { label: "负四层", value: -4 },
@@ -899,7 +941,7 @@ export default {
         { label: "负一层", value: -1 },
         { label: "整栋", value: 0 },
         ...f,
-        { label: "RF", value: 9 },
+        { label: "RF", value: 9 }
       ];
     },
     closeInfo() {
@@ -919,19 +961,19 @@ export default {
       this.cctvTotalNumShow = false;
     },
     mouseLeave(e) {
-      this.$refs.isSelectBuild.blur()
-      this.$refs.isSelectFloor.blur()
+      this.$refs.isSelectBuild.blur();
+      this.$refs.isSelectFloor.blur();
     },
     test() {
       var a = document.getElementsByClassName("el-input__inner");
-      [].slice.call(a).forEach((item) => {
+      [].slice.call(a).forEach(item => {
         item.style.background = "#021323";
         item.style.border = "1px solid #646464";
         item.style.borderRadius = "20px";
         item.style.color = "#fff";
       });
-    },
-  },
+    }
+  }
 };
 </script>
 
@@ -1078,7 +1120,7 @@ export default {
 .ahref6 {
   left: 680px;
 }
-.xinxitishi{
+.xinxitishi {
   position: absolute;
   width: 400px;
   height: 150px;
@@ -1089,7 +1131,7 @@ export default {
   border: 1px solid #646464;
   display: none;
 }
-.xinxitishi2{
+.xinxitishi2 {
   display: none;
 }
 .el-input__inner {

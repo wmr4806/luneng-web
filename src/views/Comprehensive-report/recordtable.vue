@@ -16,20 +16,20 @@
         style="width: 100%"
         :row-class-name="tableRowClassName"
       >
-        <el-table-column prop="visitorName" align="center" label="来访人" />
-        <el-table-column
+        <el-table-column prop="visitorName" align="center" label="姓名" />
+        <!-- <el-table-column
           prop="unitContactPerson"
-          label="单位联系人"
+          label="联系人"
           align="center"
-        />
-        <el-table-column prop="reasons" align="center" label="来访事由" />
-        <el-table-column prop="personNumber" align="center" label="来访人数" />
+        /> -->
+        <el-table-column prop="reasons" align="center" label="事由" />
+        <el-table-column prop="personNumber" align="center" label="人数" />
         <el-table-column prop="entryTime" label="进入时间" align="center">
           <template slot-scope="scope">
             {{ new Date(scope.row.entryTime).format("yyyy-MM-dd HH:mm") }}
           </template>
         </el-table-column>
-        <el-table-column prop="outTime" label="出去时间" align="center">
+        <el-table-column prop="outTime" label="离开时间" align="center">
           <template slot-scope="scope">
             {{ new Date(scope.row.outTime).format("yyyy-MM-dd HH:mm") }}
           </template>

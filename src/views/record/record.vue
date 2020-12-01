@@ -24,7 +24,7 @@
             </template>
             <el-input v-model="ruleForm.visitorName" style="width:11.3rem" />
           </el-form-item>
-          <el-form-item prop="entryTime">
+          <!-- <el-form-item prop="entryTime">
             <template slot="label">
               <div
                 style="display:flex;justify-content:space-between;position: relative;top: -2.2rem;padding-left: 0.5rem;"
@@ -43,8 +43,8 @@
               disabled
               style="width:11.3rem"
             />
-          </el-form-item>
-          <el-form-item label="：" prop="outTime">
+          </el-form-item> -->
+          <!-- <el-form-item label="：" prop="outTime">
             <template slot="label">
               <div
                 style="display:flex;justify-content:space-between;position: relative;top: -2.2rem;padding-left: 0.5rem;"
@@ -63,14 +63,12 @@
               value-format="yyyy-MM-dd HH:mm"
               placeholder="请选择时间"
             />
-          </el-form-item>
+          </el-form-item> -->
           <el-form-item label="" prop="unitContactPerson">
             <template slot="label">
               <div
                 style="display:flex;justify-content:space-between;position: relative;top: -2.2rem;padding-left: 0.5rem;"
               >
-                <span>单</span>
-                <span>位</span>
                 <span>联</span>
                 <span>系</span>
                 <span>人:</span>
@@ -81,26 +79,22 @@
               style="width:11.3rem"
             />
           </el-form-item>
-          <el-form-item label="" prop="reasons">
+          <el-form-item v-if="inputshow" label="" prop="reasons">
             <template slot="label">
               <div
                 style="display:flex;justify-content:space-between;position: relative;top: -2.2rem;padding-left: 0.5rem;"
               >
-                <span>来</span>
-                <span>访</span>
                 <span>事</span>
                 <span>由:</span>
               </div>
             </template>
             <el-input v-model="ruleForm.reasons" style="width:11.3rem" />
           </el-form-item>
-          <el-form-item label="" prop="personNumber">
+          <el-form-item v-if="inputshow" label="" prop="personNumber">
             <template slot="label">
               <div
                 style="display:flex;justify-content:space-between;position: relative;top: -2.2rem;padding-left: 0.5rem;"
               >
-                <span>来</span>
-                <span>访</span>
                 <span>人</span>
                 <span>数:</span>
               </div>
@@ -156,13 +150,14 @@ export default {
       }
     }
     return {
+      inputshow: true,
       recordshow: true,
       recordsss: false,
       fullscreenLoading: false,
       ruleForm: {
         visitorName: '',
-        entryTime: new Date().format('yyyy-MM-dd HH:mm'),
-        outTime: '',
+        // entryTime: new Date().format('yyyy-MM-dd HH:mm'),
+        // outTime: '',
         unitContactPerson: '',
         reasons: '',
         personNumber: ''
@@ -261,7 +256,13 @@ export default {
             setTimeout(() => {
               this.fullscreenLoading = false
               this.recordshow = false
-            }, 2000)
+            }, 1000)
+            // setTimeout(() => {
+            //   // this.fullscreenLoading = false
+            //   this.recordshow = true
+            //   this.inputshow = false
+            //   // this.$refs[formName].resetFields()
+            // }, 3000)
           })
           //   alert("submit!");
         } else {
@@ -298,7 +299,7 @@ export default {
 }
 .box-card {
   width: 24rem;
-  height: 35rem;
+  height: 30rem;
   position: absolute;
   top: 0;
   right: 0;
@@ -307,7 +308,7 @@ export default {
   margin: auto;
 }
 .demo-ruleForm {
-  margin-top: 1rem;
+  margin-top: 3rem;
 }
 .el-form-item {
   margin-bottom: 0px;
@@ -330,7 +331,7 @@ export default {
       width: 22rem;
       height: 22rem;
       position: fixed;
-      left: 53%;
+      left: 52%;
       top: 40%;
       transform: translate(-50%, -50%);
     }
