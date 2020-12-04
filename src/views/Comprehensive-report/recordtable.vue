@@ -2,7 +2,38 @@
   <div class="record">
     <el-card class="card3">
       <div slot="header" class="clearfix">
-        <span>访客记录</span>
+        <el-popover
+          style="padding:0 20px"
+          placement="top-start"
+          title="请扫码登记"
+          width="100%"
+          trigger="hover"
+        >
+          <div>
+            <img src="./img/truninto.png">
+          </div>
+          <el-button slot="reference" type="text">进入扫码</el-button>
+        </el-popover>
+        <!-- <el-tooltip
+          style="padding:0 20px"
+          class="item"
+          effect="light"
+          content="扫码登记"
+          placement="right"
+          value="true"
+        > -->
+        <el-popover
+          placement="top-start"
+          title="请扫码登记"
+          width="100%"
+          trigger="hover"
+        >
+          <div>
+            <img src="./img/out.png">
+          </div>
+          <el-button slot="reference" type="text">离开扫码</el-button>
+        </el-popover>
+        <!-- </el-tooltip> -->
         <el-button
           style="float: right; padding: 3px 0"
           type="text"
@@ -31,7 +62,11 @@
         </el-table-column>
         <el-table-column prop="outTime" label="离开时间" align="center">
           <template slot-scope="scope">
-            {{ new Date(scope.row.outTime).format("yyyy-MM-dd HH:mm") }}
+            {{
+              scope.row.outTime == null
+                ? "未离开"
+                : new Date(scope.row.outTime).format("yyyy-MM-dd HH:mm")
+            }}
           </template>
         </el-table-column>
         <!-- <el-table-column prop="createTime" label="创建时间" align="center">

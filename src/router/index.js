@@ -83,6 +83,11 @@ export const constantRoutes = [
     // hidden: true
   },
   {
+    path: '/outrecord',
+    component: () => import('@/views/record/outrecord')
+    // hidden: true
+  },
+  {
     path: '/recordtable',
     component: () => import('@/views/Comprehensive-report/recordtable'),
     hidden: true

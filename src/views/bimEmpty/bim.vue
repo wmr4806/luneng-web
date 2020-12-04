@@ -208,14 +208,32 @@
             <el-divider></el-divider>
             <span>枪式摄像头的总数为{{ this.CDDAlltotal }}个</span>
             <el-divider></el-divider>
-            <span>枪式摄像头的故障数量为{{ this.CDDErrtotal }}个</span>
+            <el-popover placement="right" width="30%" trigger="hover">
+              <div v-for="(item, index) in cameraList" :key="index">
+                <p style="color: #606266; font-weight: 700">
+                  发生故障的摄像头在<span
+                    style="color:#1890ff;font-weight: 800"
+                    >{{ item.id }}</span
+                  >
+                </p>
+              </div>
+              <span slot="reference"
+              style="color:red;cursor:pointer;"
+                >枪式摄像头的故障数量为{{ this.CDDErrtotal }}个</span
+              >
+
+              <!-- <el-button >hover 激活</el-button> -->
+            </el-popover>
+            <!-- <span>枪式摄像头的故障数量为{{ this.CDDErrtotal }}个</span> -->
             <el-divider></el-divider>
           </div>
           <div v-drag v-show="cradevent3">
             <el-divider></el-divider>
             <span>VAV的总数为{{ this.VAVAlltotal }}个</span>
             <el-divider></el-divider>
-            <span>VAV的故障数量为{{ this.VAVErrtotal }}个</span>
+            <span 
+              style="color:red;cursor:pointer;"
+            >VAV的故障数量为{{ this.VAVErrtotal }}个</span>
             <el-divider></el-divider>
           </div>
           <!-- <div v-drag v-show="cradevent5">
@@ -795,6 +813,7 @@ export default {
         label: "name",
         children: "children"
       },
+      cameraList:[],
       treebim1: false,
       treebim2: false,
       treebim3: true,
@@ -1002,6 +1021,7 @@ export default {
         this.CDDErrtotal = res.CDDMoudle.error.length;
         this.VAVAlltotal = res.VAVMoudle.goodAllVAV.length;
         this.VAVErrtotal = res.VAVMoudle.errorVAV.length;
+          this.cameraList = res.CDDMoudle.error;
         console.log(123456, res);
         console.log(1, res.CDDMoudle.all.length, res.CDDMoudle.error.length);
         console.log(2, res.AHUMoudle.AHU.length);

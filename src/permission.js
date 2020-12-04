@@ -12,7 +12,11 @@ const whiteList = ['/login'] // no redirect whitelist
 
 router.beforeEach(async(to, from, next) => {
   if (to.path === '/record') {
-    document.title = '鲁能国际中心出入登记'
+    document.title = '鲁能国际中心进入登记'
+    return next()
+  }
+  if (to.path === '/outrecord') {
+    document.title = '鲁能国际中心离开登记'
     return next()
   }
   // start progress bar

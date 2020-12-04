@@ -1,10 +1,14 @@
 <template>
-  <div id="policy_engine">
+  <div id="policy_engine" style="height:100vh;background-color:#18111f">
     <el-table
       :data="tableData"
       border
-      stripe
-      style="width: 100%"
+      style="width: 100%;"
+      :header-cell-style="{
+        background: '#221e2b',
+        color: '#1890FF',
+        'text-align': 'center'
+      }"
     >
       <template v-for="({ fixed = false,prop = '',label = '',width },index) in columns">
         <el-table-column
@@ -53,7 +57,7 @@
         fit="scale-down"
         lazy
       />
-      <el-card class="box-card myCard">
+      <el-card class="box-card myCard" style="background-color:#221e2b;color:#1890FF">
         <div slot="header" class="clearfix">
           <span>分析引擎介绍</span>
         </div>
@@ -66,7 +70,15 @@
 
     <el-dialog title="查看策略" width="80%" :close-on-click-modal="false" :visible.sync="dialog.visible">
       <el-button type="primary" size="small" @click="clickOptimize">{{ dialog.btnText }}优化</el-button>
-      <el-table v-if="!selectedRows[0]" :data="dialog.data">
+      <el-table
+        v-if="!selectedRows[0]"
+        :data="dialog.data"
+        :header-cell-style="{
+          background: '#221e2b',
+          color: '#1890FF',
+          'text-align': 'center'
+        }"
+      >
         <template v-for="({ fixed = false,prop = '',label = '',width },index) in dialog.columns">
           <el-table-column
             :key="index"
@@ -402,6 +414,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.el-table /deep/ tr{
+  color: #1890FF;
+  background-color: #221e2b;
+}
+.el-table /deep/ tbody tr:hover>td {
+    background-color: #18111f!important;
+}
   .container{
     background-color: #e3e3e3;
     min-height: 100vh;
