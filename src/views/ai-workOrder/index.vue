@@ -79,7 +79,7 @@
           @selection-change="handleSelectionChange"
         >
           <el-table-column type="selection" width="55" />
-          <el-table-column type="index" label="序号" :resizable="false" />
+          <el-table-column prop="serviceOrderId" label="序号" :resizable="false" />
           <el-table-column prop="serviceTypeName" label="服务类型名称" />
           <el-table-column prop="organName" label="组织机构名称" />
           <el-table-column prop="houseName" label="位置" />

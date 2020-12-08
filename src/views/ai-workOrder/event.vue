@@ -118,7 +118,7 @@
           @selection-change="handleSelectionChange"
         >
           <el-table-column type="selection" width="55" />
-          <el-table-column type="index" label="序号" :resizable="false" />
+          <el-table-column prop="id" label="序号" :resizable="false" />
           <el-table-column prop="event" label="事件" :resizable="false" />
           <el-table-column prop="type" label="类别" :resizable="false" />
           <el-table-column prop="status" label="状态" :resizable="false" />

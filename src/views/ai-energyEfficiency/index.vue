@@ -1,7 +1,11 @@
 <template>
   <div style="background:#18111f;height: 140vh;">
     <div class="container">
-      <div id="conservation" ref="figure1" style="width:45%;height:30rem;background:#221e2b" />
+      <div
+        id="conservation"
+        ref="figure1"
+        style="width:45%;height:30rem;background:#221e2b"
+      />
       <div style="width:50%;height:30rem;margin:0 3%;">
         <div style="width:100%;height:4rem;margin:0 auto;display:flex">
           <div
@@ -27,7 +31,10 @@
                 style="display:flex;margin: 50px auto;;width:100%;flex-direction:column;"
               >
                 <!-- <div style="text-align: center;font-size:18px">AB号楼</div> -->
-                <div ref="abechart" style="width:100%;height:350px;background:#221e2b" />
+                <div
+                  ref="abechart"
+                  style="width:100%;height:350px;background:#221e2b"
+                />
                 <!-- <div
                   v-for="(item, index) in tags"
                   :key="index + 'AB号楼'"
@@ -66,7 +73,10 @@
                 style="display:flex;margin: 50px auto;width:100%;flex-direction:column;"
               >
                 <!-- <div style="text-align: center;font-size:18px">CD号楼</div> -->
-                <div ref="cdechart" style="width:100%;height:350px;background:#221e2b" />
+                <div
+                  ref="cdechart"
+                  style="width:100%;height:350px;background:#221e2b"
+                />
                 <!-- <div
                   v-for="(item, indez) in tags"
                   :key="indez + 'CD号楼'"
@@ -92,7 +102,11 @@
           </div>
         </div>
       </div>
-      <div id="consumption" ref="figure2" style="width: 45%;height:30rem;background:#221e2b" />
+      <div
+        id="consumption"
+        ref="figure2"
+        style="width: 45%;height:30rem;background:#221e2b"
+      />
     </div>
     <!-- <div>
       <el-button
@@ -165,11 +179,15 @@ export default {
   },
   watch: {},
   mounted() {
+    this.$nextTick(() => {
+      this.initCharts()
+    })
     this._getSelectElectricalOptionsByBuild()
-    this.initCharts()
   },
   created() {
-    this.getsource()
+    this.$nextTick(() => {
+      this.getsource()
+    })
     const wh = `AB`
     const wh1 = `CD`
     this.getdata(wh, wh1)
@@ -209,7 +227,7 @@ export default {
           params.data.name +
           '</span>'
         )
-      } else if (params.data.id >= 1720) {
+      } else if (params.data.id >= 1724) {
         // this.arr = {};
         const data = {
           day: aa(),
@@ -278,7 +296,7 @@ export default {
           this.arr.lowelectricApparentLate +
           'kWh</span>'
         )
-      } else {
+      } else if (params.data.id > 1235 && params.data.id < 1720) {
         // this.arr = {};
         const data = {
           day: aa(),
@@ -316,6 +334,12 @@ export default {
             this.arr.lowelectricApparentLate = res.data.electricApparentLate
           }
         })
+      } else {
+        return (
+          '<span style="position: relative;top: 0px;padding: 0 5px;">' +
+          params.data.name +
+          '</span>'
+        )
       }
       return (
         '<span style="position: relative;top: 0px;padding: 0 5px;">高电压：' +
@@ -421,7 +445,7 @@ export default {
           {
             name: '电量',
             type: 'pie',
-            radius: [50, 90],
+            radius: [40, 90],
             roseType: 'area',
             center: ['50%', '60%'],
             data: this.abarr
@@ -660,30 +684,33 @@ export default {
       this.abarr = arr
       this.cdarr = arr1
     },
-    async getsource() {
-      await getSelectElectricalHistory().then(res => {
-        console.log(res.data.AB)
+    getsource() {
+      getSelectElectricalHistory().then(res => {
+        console.log(res.data)
         if (res.code === '200') {
           const arr = []
-          res.data.AB.mornigData.map((item, i) => {
+          const ass = res.data['AB-Morning']
+          res.data['AB-Morning'].map((item, i) => {
             arr.push({
               白天: item.value,
               product: item.date,
-              晚上: res.data.AB.nightData[i].value
+              晚上: res.data['AB-Night'][i].value
             })
           })
-          console.log(arr)
+          console.log(arr, ass)
           this.absource = arr
           const arr1 = []
-          res.data.CD.mornigData.map((item, i) => {
+          const ass1 = res.data['CD-Morning']
+          res.data['CD-Morning'].map((item, i) => {
             arr1.push({
               白天: item.value,
               product: item.date,
-              晚上: res.data.CD.nightData[i].value
+              晚上: res.data['CD-Night'][i].value
             })
           })
-          console.log(arr1)
+          console.log(arr1, ass1)
           this.cdsource = arr1
+          this.initCharts()
         }
       })
     }
