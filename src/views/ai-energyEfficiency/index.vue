@@ -13,91 +13,30 @@
           >
             园区耗能分项(KWH)
           </div>
-          <!-- <div style="width:50%;text-align:center;line-height:40px">4号</div> -->
         </div>
         <div style="display:flex;">
           <div style="width:100%;height:26rem;">
-            <!-- <div
-              style="position:relative;left:90%;top:15%;transform:translate(-50%, -50%)"
-            >
-              <el-image
-                :src="require(`@/assets/ai-energy/ammeter.jpg`)"
-                style="width:20%"
-                fit="fill"
-              />
-            </div> -->
             <div style="display:flex">
               <div
                 style="display:flex;margin: 50px auto;;width:100%;flex-direction:column;"
               >
-                <!-- <div style="text-align: center;font-size:18px">AB号楼</div> -->
                 <div
                   ref="abechart"
                   style="width:100%;height:350px;background:#221e2b"
                 />
-                <!-- <div
-                  v-for="(item, index) in tags"
-                  :key="index + 'AB号楼'"
-                  style="margin-top:5px"
-                >
-                  <TEXTMSG
-                    :msg="item"
-                    :all-data="
-                      abcdElectrical &&
-                        abcdElectrical[0] &&
-                        abcdElectrical[0][index]
-                    "
-                  />
-                </div> -->
               </div>
-              <!-- <div style="display:flex;margin-top:30px;width:50%;flex-direction:column;">
-                <div style="text-align: center;font-size:18px">2号楼</div>
-                <div v-for="(item, indey) in tags" :key="indey + '2号楼'" style="margin-top:5px">
-                  <TEXTMSG :msg="item" :all-data="abcdElectrical && abcdElectrical[1] &&abcdElectrical[1][indey]" />
-                </div>
-              </div> -->
             </div>
           </div>
           <div style="width:100%;height:26rem;">
-            <!-- <div
-              style="position:relative;left:90%;top:15%;transform:translate(-50%, -50%)"
-            >
-              <el-image
-                :src="require(`@/assets/ai-energy/ammeter.jpg`)"
-                style="width:20%"
-                fit="fill"
-              />
-            </div> -->
             <div style="display:flex">
               <div
                 style="display:flex;margin: 50px auto;width:100%;flex-direction:column;"
               >
-                <!-- <div style="text-align: center;font-size:18px">CD号楼</div> -->
                 <div
                   ref="cdechart"
                   style="width:100%;height:350px;background:#221e2b"
                 />
-                <!-- <div
-                  v-for="(item, indez) in tags"
-                  :key="indez + 'CD号楼'"
-                  style="margin-top:5px"
-                >
-                  <TEXTMSG
-                    :msg="item"
-                    :all-data="
-                      abcdElectrical &&
-                        abcdElectrical[1] &&
-                        abcdElectrical[1][indez]
-                    "
-                  />
-                </div> -->
               </div>
-              <!-- <div style="display:flex;margin-top:30px;width:50%;flex-direction:column;">
-                <div style="text-align: center;font-size:18px">4号楼</div>
-                <div v-for="(item, indexyz) in tags" :key="indexyz + '4号楼'" style="margin-top:5px">
-                  <TEXTMSG :msg="item" :all-data="abcdElectrical && abcdElectrical[3] &&abcdElectrical[3][indexyz]" />
-                </div>
-              </div> -->
             </div>
           </div>
         </div>
@@ -220,6 +159,13 @@ export default {
       // this.resize();
     },
     formatterHover(params) {
+      if (params.data.id === 2020 || params.data.id === 2021) {
+        return (
+          '<span style="position: relative;top: 0px;padding: 0 5px;">' +
+          params.data.label +
+          '</span>'
+        )
+      }
       // console.log(params);
       if (params.data.id === undefined) {
         return (
@@ -635,15 +581,41 @@ export default {
     },
     diguis(item) {
       const arr = item
-      arr.forEach(ele => {
+      arr.forEach((ele, i) => {
         // console.log(ele);
         ele.name = ele.label
         if (ele.children.length > 0) {
           return this.diguis(ele.children)
         }
+        if (arr[i].id === 1731) {
+          arr[i].children.push(
+            {
+              children: [],
+              extend0: null,
+              id: 2020,
+              label: '55kW',
+              leafCount: 3,
+              level: null,
+              name: 'ad区B1~B3普通照明',
+              typeId: 1003
+            },
+            {
+              children: [],
+              extend0: null,
+              id: 2021,
+              label: '70kW',
+              leafCount: 3,
+              level: null,
+              name: 'be区B1~B3普通照明',
+              typeId: 1003
+            }
+          )
+        }
       })
+
       this.data.children[0].children = arr
-      // console.log(this.data.children[0].children);
+      // this.data.children[0].children.push()
+      console.log(this.data.children[0].children)
       this.initCharts()
     },
     digui(item) {
@@ -686,10 +658,10 @@ export default {
     },
     getsource() {
       getSelectElectricalHistory().then(res => {
-        console.log(res.data)
+        // console.log(res.data)
         if (res.code === '200') {
           const arr = []
-          const ass = res.data['AB-Morning']
+          // const ass = res.data['AB-Morning']
           res.data['AB-Morning'].map((item, i) => {
             arr.push({
               白天: item.value,
@@ -697,10 +669,10 @@ export default {
               晚上: res.data['AB-Night'][i].value
             })
           })
-          console.log(arr, ass)
+          // console.log(arr, ass)
           this.absource = arr
           const arr1 = []
-          const ass1 = res.data['CD-Morning']
+          // const ass1 = res.data['CD-Morning']
           res.data['CD-Morning'].map((item, i) => {
             arr1.push({
               白天: item.value,
@@ -708,7 +680,7 @@ export default {
               晚上: res.data['CD-Night'][i].value
             })
           })
-          console.log(arr1, ass1)
+          // console.log(arr1, ass1)
           this.cdsource = arr1
           this.initCharts()
         }

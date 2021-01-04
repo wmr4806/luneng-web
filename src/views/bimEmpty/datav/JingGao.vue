@@ -79,7 +79,7 @@ export default {
   },
   computed: {
     BIMSrc() {
-      return process.env.NODE_ENV === 'development' ? 'http://localhost:9090/#/bimLink' : 'http://101.132.169.245/#/bimLink'
+      return process.env.NODE_ENV === 'development' ? 'http://localhost:9090/#/bimLinks' : 'http://101.132.169.245/#/bimLinks'
     }
   },
   watch: {

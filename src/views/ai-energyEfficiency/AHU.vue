@@ -157,8 +157,8 @@ export default {
   computed: {
     tags() {
       return {
-        flowOne: [{ label: '流量', unit: 'm3/h' }, { label: '进水', unit: '℃' }, { label: '出水', unit: '℃' }, { label: '供冷量', unit: 'kw' }, { label: '电量', unit: 'kwh' }],
-        flowTwo: [{ label: '流量', unit: 'm3/h' }, { label: '进水', unit: '℃' }, { label: '出水', unit: '℃' }, { label: '供冷量', unit: 'kw' }, { label: '调用次数', unit: '次' }]
+        flowOne: [{ label: '流量', unit: 'm3/h' }, { label: '送水', unit: '℃' }, { label: '回水', unit: '℃' }, { label: '供热量', unit: 'kw' }, { label: '电量', unit: 'kwh' }],
+        flowTwo: [{ label: '流量', unit: 'm3/h' }, { label: '送水', unit: '℃' }, { label: '回水', unit: '℃' }, { label: '供热量', unit: 'kw' }, { label: '调用次数', unit: '次' }]
       }
     },
     ahuData() {
@@ -312,8 +312,8 @@ export default {
       getAiInfos().then(res => {
         const { flow: { flowOneData, flowTwoData }} = this
         const { calls, electric, flowOne = {}, flowTwo = {}} = res && res.data
-        flowOneData.push(flowOne.flow, flowOne.inletWater, flowOne.returnWater, flowOne.cold, electric)
-        flowTwoData.push(flowTwo.flow, flowTwo.inletWater, flowTwo.returnWater, flowTwo.cold, calls)
+        flowOneData.push(flowOne.flow, flowOne.inletWater, flowOne.returnWater, Math.abs(flowOne.cold), electric)
+        flowTwoData.push(flowTwo.flow, flowTwo.inletWater, flowTwo.returnWater, Math.abs(flowTwo.cold), calls)
       })
     },
     _getWarmAHUList() {

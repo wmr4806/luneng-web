@@ -1,9 +1,9 @@
 <template>
-  <div style="background: #18111f;width:100%;height:104vh">
-    <el-row>
+  <div style="width:100%;">
+    <el-row style="background: #18111f;width:100%;height:100%">
       <el-col
         :span="5"
-        style="background: #18111f;color: #fff;height:104vh;"
+        style="background: #18111f;color: #fff;"
       >
         <div style="margin:40px">
           <dv-decoration-11

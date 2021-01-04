@@ -210,15 +210,14 @@
             <el-divider></el-divider>
             <el-popover placement="right" width="30%" trigger="hover">
               <div v-for="(item, index) in cameraList" :key="index">
-                <p style="color: #606266; font-weight: 700">
+                <p style="color: #606266;  font-weight: 700">
                   发生故障的摄像头在<span
-                    style="color:#1890ff;font-weight: 800"
+                    style="color: #1890ff; font-weight: 800"
                     >{{ item.id }}</span
                   >
                 </p>
               </div>
-              <span slot="reference"
-              style="color:red;cursor:pointer;"
+              <span slot="reference" style="color: red; cursor: pointer"
                 >枪式摄像头的故障数量为{{ this.CDDErrtotal }}个</span
               >
 
@@ -231,9 +230,9 @@
             <el-divider></el-divider>
             <span>VAV的总数为{{ this.VAVAlltotal }}个</span>
             <el-divider></el-divider>
-            <span 
-              style="color:red;cursor:pointer;"
-            >VAV的故障数量为{{ this.VAVErrtotal }}个</span>
+            <span style="color: red; cursor: pointer"
+              >VAV的故障数量为{{ this.VAVErrtotal }}个</span
+            >
             <el-divider></el-divider>
           </div>
           <!-- <div v-drag v-show="cradevent5">
@@ -477,43 +476,43 @@
         <div style="color: #ffffff">
           CO2浓度：{{
             ahu1Data[`AHU${building}-${floor}-1-CO2_CV`] &&
-              ahu1Data[`AHU${building}-${floor}-1-CO2_CV`].value
+            ahu1Data[`AHU${building}-${floor}-1-CO2_CV`].value
           }}ppm
         </div>
         <div style="color: #ffffff">
           回风温度：{{
             ahu1Data[`AHU${building}-${floor}-1-RT_CV`] &&
-              ahu1Data[`AHU${building}-${floor}-1-RT_CV`].value
+            ahu1Data[`AHU${building}-${floor}-1-RT_CV`].value
           }}℃
         </div>
         <div style="color: #ffffff">
           回风湿度：{{
             ahu1Data[`AHU${building}-${floor}-1-RH_CV`] &&
-              ahu1Data[`AHU${building}-${floor}-1-RH_CV`].value
+            ahu1Data[`AHU${building}-${floor}-1-RH_CV`].value
           }}%
         </div>
         <div style="color: #ffffff">
           送风温度：{{
             ahu1Data[`AHU${building}-${floor}-1-ST_CV`] &&
-              ahu1Data[`AHU${building}-${floor}-1-ST_CV`].value
+            ahu1Data[`AHU${building}-${floor}-1-ST_CV`].value
           }}℃
         </div>
         <div style="color: #ffffff">
           送风湿度：{{
             ahu1Data[`AHU${building}-${floor}-1-SH_CV`] &&
-              ahu1Data[`AHU${building}-${floor}-1-SH_CV`].value
+            ahu1Data[`AHU${building}-${floor}-1-SH_CV`].value
           }}%
         </div>
         <div style="color: #ffffff">
           送风压力：{{
             ahu1Data[`AHU${building}-${floor}-1-SP1_CV`] &&
-              ahu1Data[`AHU${building}-${floor}-1-SP1_CV`].value
+            ahu1Data[`AHU${building}-${floor}-1-SP1_CV`].value
           }}Pa
         </div>
         <div style="color: #ffffff">
           频率反馈：{{
             ahu1Data[`AHU${building}-${floor}-1-SF_CV`] &&
-              ahu1Data[`AHU${building}-${floor}-1-SF_CV`].value
+            ahu1Data[`AHU${building}-${floor}-1-SF_CV`].value
           }}Hz
         </div>
         <div style="color: #ffffff">
@@ -541,43 +540,43 @@
         <div style="color: #ffffff">
           CO2浓度：{{
             ahu2Data[`AHU${building}-${floor}-2-CO2_CV`] &&
-              ahu2Data[`AHU${building}-${floor}-2-CO2_CV`].value
+            ahu2Data[`AHU${building}-${floor}-2-CO2_CV`].value
           }}ppm
         </div>
         <div style="color: #ffffff">
           回风温度：{{
             ahu2Data[`AHU${building}-${floor}-2-RT_CV`] &&
-              ahu2Data[`AHU${building}-${floor}-2-RT_CV`].value
+            ahu2Data[`AHU${building}-${floor}-2-RT_CV`].value
           }}℃
         </div>
         <div style="color: #ffffff">
           回风湿度：{{
             ahu2Data[`AHU${building}-${floor}-2-RH_CV`] &&
-              ahu2Data[`AHU${building}-${floor}-2-RH_CV`].value
+            ahu2Data[`AHU${building}-${floor}-2-RH_CV`].value
           }}%
         </div>
         <div style="color: #ffffff">
           送风温度：{{
             ahu2Data[`AHU${building}-${floor}-2-ST_CV`] &&
-              ahu2Data[`AHU${building}-${floor}-2-ST_CV`].value
+            ahu2Data[`AHU${building}-${floor}-2-ST_CV`].value
           }}℃
         </div>
         <div style="color: #ffffff">
           送风湿度：{{
             ahu2Data[`AHU${building}-${floor}-2-SH_CV`] &&
-              ahu2Data[`AHU${building}-${floor}-2-SH_CV`].value
+            ahu2Data[`AHU${building}-${floor}-2-SH_CV`].value
           }}%
         </div>
         <div style="color: #ffffff">
           送风压力：{{
             ahu2Data[`AHU${building}-${floor}-2-SP1_CV`] &&
-              ahu2Data[`AHU${building}-${floor}-2-SP1_CV`].value
+            ahu2Data[`AHU${building}-${floor}-2-SP1_CV`].value
           }}Pa
         </div>
         <div style="color: #ffffff">
           频率反馈：{{
             ahu2Data[`AHU${building}-${floor}-2-SF_CV`] &&
-              ahu2Data[`AHU${building}-${floor}-2-SF_CV`].value
+            ahu2Data[`AHU${building}-${floor}-2-SF_CV`].value
           }}Hz
         </div>
         <div style="color: #ffffff">
@@ -632,7 +631,7 @@ import {
   getWarmAHUList,
   getAlmEvents,
   getColdSourceList,
-  getHeatSourceList
+  getHeatSourceList,
 } from "@/api/data";
 import { getbim, getfloors, getfloor1, getfloor2 } from "@/api/floorbim";
 import {
@@ -640,7 +639,7 @@ import {
   ahuAndVavArr,
   airTotalNum,
   havcTotalNum,
-  cameraId
+  cameraId,
 } from "./constant";
 import MyVideo from "@/views/ai-security/MyVideo";
 import id from "@/views/bimEmpty/bimId/index";
@@ -660,7 +659,7 @@ const {
   coldAndHeat: { coldAndHeat1, coldAndHeat2 },
   idB4F1: { ahuIdB4F1, fireB4F1 },
   idB4F2: { ahuIdB4F2, vavIdB4F2, fireB4F2 },
-  idB4F3: { cctvId, vavIdB4F3, ahuIdB4F3, fireB4F3 }
+  idB4F3: { cctvId, vavIdB4F3, ahuIdB4F3, fireB4F3 },
   // idB4F4: { ahuIdB4F4, vavIdB4F4, fireB4F4 },
   // idB4F5: { ahuIdB4F5, vavIdB4F5, fireB4F5 },
   // idB4F6: { ahuIdB4F6, vavIdB4F6, fireB4F6 },
@@ -673,29 +672,29 @@ export default {
   filters: {
     toFixedNum(val, num = 1) {
       return Number(val).toFixed(num);
-    }
+    },
   },
   directives: {
-    drag: function(el) {
+    drag: function (el) {
       const dragBox = el;
-      dragBox.onmousedown = e => {
+      dragBox.onmousedown = (e) => {
         const disX = e.clientX - dragBox.offsetLeft;
         const disY = e.clientY - dragBox.offsetTop;
-        document.onmousemove = e => {
+        document.onmousemove = (e) => {
           const left = e.clientX - disX;
           const top = e.clientY - disY;
           dragBox.style.left = left + "px";
           dragBox.style.top = top + "px";
         };
-        document.onmouseup = e => {
+        document.onmouseup = (e) => {
           document.onmousemove = null;
           document.onmouseup = null;
         };
       };
-    }
+    },
   },
   components: {
-    MyVideo
+    MyVideo,
   },
   data() {
     return {
@@ -703,117 +702,117 @@ export default {
       data1: [],
       data1props1: {
         label: "name",
-        children: "children"
+        children: "children",
       },
       //二层
       data2: [],
       data1props2: {
         label: "name",
-        children: "children"
+        children: "children",
       },
       //三层
       data3: [],
       data1props3: {
         label: "name",
-        children: "children"
+        children: "children",
       },
       //四层 八层
       data4: [],
       data1props4: {
         label: "name",
-        children: "children"
+        children: "children",
       },
       //五层 六层 七层
       data5: [],
       data1props5: {
         label: "name",
-        children: "children"
+        children: "children",
       },
       // 负一层
       data6: [],
       data1props6: {
         label: "name",
-        children: "children"
+        children: "children",
       },
       // 负二层
       data7: [],
       data1props7: {
         label: "name",
-        children: "children"
+        children: "children",
       },
       // 负三层
       data8: [],
       data1props8: {
         label: "name",
-        children: "children"
+        children: "children",
       },
       // 负四层
       data9: [],
       data1props9: {
         label: "name",
-        children: "children"
+        children: "children",
       },
       //四号楼整栋
       data10: [],
       data1props10: {
         label: "name",
-        children: "children"
+        children: "children",
       },
       // 一层
       data11: [],
       data1props11: {
         label: "name",
-        children: "children"
+        children: "children",
       },
       // 二层至十一层
       data12: [],
       data1props12: {
         label: "name",
-        children: "children"
+        children: "children",
       },
       // 十二层至十九层
       data13: [],
       data1props13: {
         label: "name",
-        children: "children"
+        children: "children",
       },
       // 二十层
       data14: [],
       data1props14: {
         label: "name",
-        children: "children"
+        children: "children",
       },
       // 二十一层
       data15: [],
       data1props15: {
         label: "name",
-        children: "children"
+        children: "children",
       },
       // 二十二层
       data16: [],
       data1props16: {
         label: "name",
-        children: "children"
+        children: "children",
       },
       // 三号楼整栋
       data17: [],
       data1props17: {
         label: "name",
-        children: "children"
+        children: "children",
       },
       // 四楼顶层
       data18: [],
       data1props18: {
         label: "name",
-        children: "children"
+        children: "children",
       },
       // 三楼顶层
       data19: [],
       data1props19: {
         label: "name",
-        children: "children"
+        children: "children",
       },
-      cameraList:[],
+      cameraList: [],
       treebim1: false,
       treebim2: false,
       treebim3: true,
@@ -853,12 +852,12 @@ export default {
       buildings: [
         {
           label: `3号楼`,
-          value: 3
+          value: 3,
         },
         {
           label: `4号楼`,
-          value: 4
-        }
+          value: 4,
+        },
       ],
       vavIsShow: false,
       Id: "",
@@ -880,7 +879,7 @@ export default {
       totalData: {},
       alarmArrData: [],
       dbid: "2816",
-      verfloor4: []
+      verfloor4: [],
     };
   },
   computed: {
@@ -908,14 +907,14 @@ export default {
         }
       }
       return url_bim;
-    }
+    },
   },
   watch: {
-    url: function(val, old) {
+    url: function (val, old) {
       this.$nextTick(() => {
         this.$refs.myVideo.play();
       });
-    }
+    },
   },
   created() {
     window["handleBim"] = (id, child) => {
@@ -953,7 +952,7 @@ export default {
       const key = `B${bigBuilding}F${bigFloor}`;
       const obj = fireObj();
       const arr = [Alarm, obj[key]];
-      arr.forEach(i => {
+      arr.forEach((i) => {
         i.forEach((v, k) => {
           if (bigId === k) {
             setTimeout(() => {
@@ -975,7 +974,7 @@ export default {
       const obj = fireObj();
 
       const arr = [Alarm, obj[key]];
-      arr.forEach(i => {
+      arr.forEach((i) => {
         i.forEach((v, k) => {
           if (id === k) {
             setTimeout(() => {
@@ -987,16 +986,16 @@ export default {
       this.selectIsShow = false;
     } else {
       getAlmEvents(this.building, this.floor)
-        .then(res => {
+        .then((res) => {
           if (res.code === "200") {
             this.alarmArrData = res.data;
             const key = `B${this.building}F${this.floor}`;
             const obj = fireObj();
             const arr = [Alarm, obj[key]];
 
-            arr.forEach(i => {
+            arr.forEach((i) => {
               i.forEach((v, k) => {
-                res.data.forEach(id => {
+                res.data.forEach((id) => {
                   if (id === k) {
                     this.alarmId.push(v);
                   }
@@ -1015,13 +1014,13 @@ export default {
   },
   methods: {
     async getvideo() {
-      await getfloor2().then(res => {
+      await getfloor2().then((res) => {
         this.AHUAlltotal = res.AHUMoudle.AHU.length;
         this.CDDAlltotal = res.CDDMoudle.all.length;
         this.CDDErrtotal = res.CDDMoudle.error.length;
         this.VAVAlltotal = res.VAVMoudle.goodAllVAV.length;
         this.VAVErrtotal = res.VAVMoudle.errorVAV.length;
-          this.cameraList = res.CDDMoudle.error;
+        this.cameraList = res.CDDMoudle.error;
         console.log(123456, res);
         console.log(1, res.CDDMoudle.all.length, res.CDDMoudle.error.length);
         console.log(2, res.AHUMoudle.AHU.length);
@@ -1035,15 +1034,16 @@ export default {
     async getbimfloor() {
       this.data1 = [];
       // 四号楼
-      await getfloors(465).then(res => {
+      await getfloors(465).then((res) => {
+        console.log(12345123456, res);
         // 1
         let s = [];
         let s1 = [];
-        //2
+        // //2
         let s2 = [];
         let s3 = [];
         let s4 = [];
-        //3
+        // //3
         let s5 = [];
         let s6 = [];
         let s7 = [];
@@ -1059,6 +1059,7 @@ export default {
         let s14 = [];
         //4-2
         let s15 = [];
+        let s51 = [];
         //4-3
         let s16 = [];
         //4-4
@@ -1067,9 +1068,9 @@ export default {
         let s18 = [];
         let s19 = [];
         let s20 = [];
-        //4-rf
-        let rf = [];
-        res.data.map(i => {
+        // //4-rf
+        // let rf = [];
+        res.data.map((i) => {
           // 1
           if (i.floor === "B4F1" && i.type_name === "摄像头") {
             s.push(i);
@@ -1097,7 +1098,7 @@ export default {
           if (i.floor === "B4F3" && i.type_name === "VAV") {
             s7.push(i);
           }
-          //4 8
+          // //4 8
           if (i.floor === "B4F4" && i.type_name === "摄像头") {
             s8.push(i);
           }
@@ -1125,6 +1126,9 @@ export default {
           if (i.floor === "B4F-2" && i.type_name === "摄像头") {
             s15.push(i);
           }
+          if (i.floor === "B4F-2" && i.type_name === "潜污泵") {
+            s51.push(i);
+          }
           // 4-3
           if (i.floor === "B4F-3" && i.type_name === "摄像头") {
             s16.push(i);
@@ -1143,213 +1147,222 @@ export default {
           if (i.floor === "B4F0" && i.type_name === "VAV") {
             s20.push(i);
           }
-          //4-rf
-          if (i.floor === "B4RF" && i.type_name === "摄像头") {
-            rf.push(i);
-          }
+          // //4-rf
+          // if (i.floor === "B4RF" && i.type_name === "摄像头") {
+          //   rf.push(i);
+          // }
         });
-        // console.log(12345, s15);
+        // console.log(12345, s5);
         // 一楼
         let a = { name: s[0].name, children: [] };
-        s.forEach(ele => {
+        s.forEach((ele) => {
           a.children.push({
             name: ele.dbname,
             dbid: ele.dbid,
-            type: s[0].type
+            type: s[0].type,
           });
         });
+        console.log(234444, a);
         let a1 = { name: s1[0].name, children: [] };
-        s1.forEach(ele => {
+        s1.forEach((ele) => {
           a1.children.push({
             name: ele.dbname,
             dbid: ele.dbid,
-            type: s1[0].type
+            type: s1[0].type,
           });
         });
         // 二楼
         let a2 = { name: s2[0].name, children: [] };
-        s2.forEach(ele => {
+        s2.forEach((ele) => {
           a2.children.push({
             name: ele.dbname,
             dbid: ele.dbid,
-            type: s2[0].type
+            type: s2[0].type,
           });
         });
         let a3 = { name: s3[0].name, children: [] };
-        s3.forEach(ele => {
+        s3.forEach((ele) => {
           a3.children.push({
             name: ele.dbname,
             dbid: ele.dbid,
-            type: s3[0].type
+            type: s3[0].type,
           });
         });
         let a4 = { name: s4[0].name, children: [] };
-        s4.forEach(ele => {
+        s4.forEach((ele) => {
           a4.children.push({
             name: ele.dbname,
             dbid: ele.dbid,
-            type: s4[0].type
+            type: s4[0].type,
           });
         });
-        // 三楼
+        // // 三楼
         let a5 = { name: s5[0].name, children: [] };
-        s5.forEach(ele => {
+        s5.forEach((ele) => {
           a5.children.push({
             name: ele.dbname,
             dbid: ele.dbid,
-            type: s5[0].type
+            type: s5[0].type,
           });
         });
         let a6 = { name: s6[0].name, children: [] };
-        s6.forEach(ele => {
+        s6.forEach((ele) => {
           a6.children.push({
             name: ele.dbname,
             dbid: ele.dbid,
-            type: s6[0].type
+            type: s6[0].type,
           });
         });
         let a7 = { name: s7[0].name, children: [] };
-        s7.forEach(ele => {
+        s7.forEach((ele) => {
           a7.children.push({
             name: ele.dbname,
             dbid: ele.dbid,
-            type: s7[0].type
+            type: s7[0].type,
           });
         });
-        // 四楼 八楼
+        // // 四楼 八楼
         let a8 = { name: s8[0].name, children: [] };
-        s8.forEach(ele => {
+        s8.forEach((ele) => {
           a8.children.push({
             name: ele.dbname,
             dbid: ele.dbid,
-            type: s8[0].type
+            type: s8[0].type,
           });
         });
         let a9 = { name: s9[0].name, children: [] };
-        s9.forEach(ele => {
+        s9.forEach((ele) => {
           a9.children.push({
             name: ele.dbname,
             dbid: ele.dbid,
-            type: s9[0].type
+            type: s9[0].type,
           });
         });
         let a10 = { name: s10[0].name, children: [] };
-        s10.forEach(ele => {
+        s10.forEach((ele) => {
           a10.children.push({
             name: ele.dbname,
             dbid: ele.dbid,
-            type: s10[0].type
+            type: s10[0].type,
           });
         });
         // 五楼 六楼 七楼
         let a11 = { name: s11[0].name, children: [] };
-        s11.forEach(ele => {
+        s11.forEach((ele) => {
           a11.children.push({
             name: ele.dbname,
             dbid: ele.dbid,
-            type: s11[0].type
+            type: s11[0].type,
           });
         });
         let a12 = { name: s12[0].name, children: [] };
-        s12.forEach(ele => {
+        s12.forEach((ele) => {
           a12.children.push({
             name: ele.dbname,
             dbid: ele.dbid,
-            type: s12[0].type
+            type: s12[0].type,
           });
         });
         let a13 = { name: s13[0].name, children: [] };
-        s13.forEach(ele => {
+        s13.forEach((ele) => {
           a13.children.push({
             name: ele.dbname,
             dbid: ele.dbid,
-            type: s13[0].type
+            type: s13[0].type,
           });
         });
         // 负一楼
         let a14 = { name: s14[0].name, children: [] };
-        s14.forEach(ele => {
+        s14.forEach((ele) => {
           a14.children.push({
             name: ele.dbname,
             dbid: ele.dbid,
-            type: s14[0].type
+            type: s14[0].type,
           });
         });
         // 负二楼
         let a15 = { name: s15[0].name, children: [] };
-        s15.forEach(ele => {
+        s15.forEach((ele) => {
           a15.children.push({
             name: ele.dbname,
             dbid: ele.dbid,
-            type: s15[0].type
+            type: s15[0].type,
+          });
+        });
+        let a51 = { name: s51[0].name, children: [] };
+        s51.forEach((ele) => {
+          a51.children.push({
+            name: ele.dbname,
+            dbid: ele.dbid,
+            type: s51[0].type,
           });
         });
         // 负三楼
         let a16 = { name: s16[0].name, children: [] };
-        s16.forEach(ele => {
+        s16.forEach((ele) => {
           a16.children.push({
             name: ele.dbname,
             dbid: ele.dbid,
-            type: s16[0].type
+            type: s16[0].type,
           });
         });
         // 负四楼
         let a17 = { name: s17[0].name, children: [] };
-        s17.forEach(ele => {
+        s17.forEach((ele) => {
           a17.children.push({
             name: ele.dbname,
             dbid: ele.dbid,
-            type: s17[0].type
+            type: s17[0].type,
           });
         });
-        //四号楼整栋
-        let a18 = { name: s18[0].name, children: [] };
-        s18.forEach(ele => {
-          a18.children.push({
-            name: ele.dbname,
-            dbid: ele.dbid,
-            type: s18[0].type
-          });
-        });
-        let a19 = { name: s19[0].name, children: [] };
-        s19.forEach(ele => {
-          a19.children.push({
-            name: ele.dbname,
-            dbid: ele.dbid,
-            type: s19[0].type
-          });
-        });
-        let a20 = { name: s20[0].name, children: [] };
-        s20.forEach(ele => {
-          a20.children.push({
-            name: ele.dbname,
-            dbid: ele.dbid,
-            type: s20[0].type
-          });
-        });
-        // 四号楼RF
-        let a21 = { name: rf[0].name, children: [] };
-        rf.forEach(ele => {
-          a21.children.push({
-            name: ele.dbname,
-            dbid: ele.dbid,
-            type: rf[0].type
-          });
-        });
+        // //四号楼整栋
+        // let a18 = { name: s18[0].name, children: [] };
+        // s18.forEach(ele => {
+        //   a18.children.push({
+        //     name: ele.dbname,
+        //     dbid: ele.dbid,
+        //     type: s18[0].type
+        //   });
+        // });
+        // let a19 = { name: s19[0].name, children: [] };
+        // s19.forEach(ele => {
+        //   a19.children.push({
+        //     name: ele.dbname,
+        //     dbid: ele.dbid,
+        //     type: s19[0].type
+        //   });
+        // });
+        // let a20 = { name: s20[0].name, children: [] };
+        // s20.forEach(ele => {
+        //   a20.children.push({
+        //     name: ele.dbname,
+        //     dbid: ele.dbid,
+        //     type: s20[0].type
+        //   });
+        // });
+        // // 四号楼RF
+        // let a21 = { name: rf[0].name, children: [] };
+        // rf.forEach(ele => {
+        //   a21.children.push({
+        //     name: ele.dbname,
+        //     dbid: ele.dbid,
+        //     type: rf[0].type
+        //   });
+        // });
         this.data1.push(a, a1);
         this.data2.push(a2, a3, a4);
         this.data3.push(a5, a6, a7);
         this.data4.push(a8, a9, a10);
         this.data5.push(a11, a12, a13);
         this.data6.push(a14);
-        this.data7.push(a15);
+        this.data7.push(a15, a51);
         this.data8.push(a16);
         this.data9.push(a17);
-        this.data10.push(a18, a19, a20);
-        this.data18.push(a21);
+        // this.data10.push(a18, a19, a20);
+        // this.data18.push(a21);
       });
       // 三号楼
-      await getfloors(571).then(res => {
+      await getfloors(571).then((res) => {
         // 1
         let s = [];
         let s1 = [];
@@ -1381,7 +1394,7 @@ export default {
         let s18 = [];
         //rf
         let s19 = [];
-        res.data.map(i => {
+        res.data.map((i) => {
           // 1
           if (i.floor === "B3F1" && i.type_name === "摄像头") {
             s.push(i);
@@ -1452,186 +1465,186 @@ export default {
         });
         // 一楼
         let a = { name: s[0].name, children: [] };
-        s.forEach(ele => {
+        s.forEach((ele) => {
           a.children.push({
             name: ele.dbname,
             dbid: ele.dbid,
-            type: s[0].type
+            type: s[0].type,
           });
         });
         let a1 = { name: s1[0].name, children: [] };
-        s1.forEach(ele => {
+        s1.forEach((ele) => {
           a1.children.push({
             name: ele.dbname,
             dbid: ele.dbid,
-            type: s1[0].type
+            type: s1[0].type,
           });
         });
         // 二楼至十一楼
         let a2 = { name: s2[0].name, children: [] };
-        s2.forEach(ele => {
+        s2.forEach((ele) => {
           a2.children.push({
             name: ele.dbname,
             dbid: ele.dbid,
-            type: s2[0].type
+            type: s2[0].type,
           });
         });
         let a3 = { name: s3[0].name, children: [] };
-        s3.forEach(ele => {
+        s3.forEach((ele) => {
           a3.children.push({
             name: ele.dbname,
             dbid: ele.dbid,
-            type: s3[0].type
+            type: s3[0].type,
           });
         });
         let a4 = { name: s4[0].name, children: [] };
-        s4.forEach(ele => {
+        s4.forEach((ele) => {
           a4.children.push({
             name: ele.dbname,
             dbid: ele.dbid,
-            type: s4[0].type
+            type: s4[0].type,
           });
         });
         // 十二层至十九层
         let a5 = { name: s5[0].name, children: [] };
-        s5.forEach(ele => {
+        s5.forEach((ele) => {
           a5.children.push({
             name: ele.dbname,
             dbid: ele.dbid,
-            type: s5[0].type
+            type: s5[0].type,
           });
         });
         let a6 = { name: s6[0].name, children: [] };
-        s6.forEach(ele => {
+        s6.forEach((ele) => {
           a6.children.push({
             name: ele.dbname,
             dbid: ele.dbid,
-            type: s6[0].type
+            type: s6[0].type,
           });
         });
         let a7 = { name: s7[0].name, children: [] };
-        s7.forEach(ele => {
+        s7.forEach((ele) => {
           a7.children.push({
             name: ele.dbname,
             dbid: ele.dbid,
-            type: s7[0].type
+            type: s7[0].type,
           });
         });
         // 二十层
         let a8 = { name: s8[0].name, children: [] };
-        s8.forEach(ele => {
+        s8.forEach((ele) => {
           a8.children.push({
             name: ele.dbname,
             dbid: ele.dbid,
-            type: s8[0].type
+            type: s8[0].type,
           });
         });
         let a9 = { name: s9[0].name, children: [] };
-        s9.forEach(ele => {
+        s9.forEach((ele) => {
           a9.children.push({
             name: ele.dbname,
             dbid: ele.dbid,
-            type: s9[0].type
+            type: s9[0].type,
           });
         });
         let a10 = { name: s10[0].name, children: [] };
-        s10.forEach(ele => {
+        s10.forEach((ele) => {
           a10.children.push({
             name: ele.dbname,
             dbid: ele.dbid,
-            type: s10[0].type
+            type: s10[0].type,
           });
         });
         // 二十一层
         let a11 = { name: s11[0].name, children: [] };
-        s11.forEach(ele => {
+        s11.forEach((ele) => {
           a11.children.push({
             name: ele.dbname,
             dbid: ele.dbid,
-            type: s11[0].type
+            type: s11[0].type,
           });
         });
         let a12 = { name: s12[0].name, children: [] };
-        s12.forEach(ele => {
+        s12.forEach((ele) => {
           a12.children.push({
             name: ele.dbname,
             dbid: ele.dbid,
-            type: s12[0].type
+            type: s12[0].type,
           });
         });
         let a13 = { name: s13[0].name, children: [] };
-        s13.forEach(ele => {
+        s13.forEach((ele) => {
           a13.children.push({
             name: ele.dbname,
             dbid: ele.dbid,
-            type: s13[0].type
+            type: s13[0].type,
           });
         });
         // 二十二层
         let a14 = { name: s14[0].name, children: [] };
-        s14.forEach(ele => {
+        s14.forEach((ele) => {
           a14.children.push({
             name: ele.dbname,
             dbid: ele.dbid,
-            type: s14[0].type
+            type: s14[0].type,
           });
         });
         let a15 = { name: s15[0].name, children: [] };
-        s15.forEach(ele => {
+        s15.forEach((ele) => {
           a15.children.push({
             name: ele.dbname,
             dbid: ele.dbid,
-            type: s15[0].type
+            type: s15[0].type,
           });
         });
         // 整栋
-        let a16 = { name: s16[0].name, children: [] };
-        s16.forEach(ele => {
-          a16.children.push({
-            name: ele.dbname,
-            dbid: ele.dbid,
-            type: s16[0].type
-          });
-        });
-        let a17 = { name: s17[0].name, children: [] };
-        s17.forEach(ele => {
-          a17.children.push({
-            name: ele.dbname,
-            dbid: ele.dbid,
-            type: s17[0].type
-          });
-        });
-        let a18 = { name: s18[0].name, children: [] };
-        s18.forEach(ele => {
-          a18.children.push({
-            name: ele.dbname,
-            dbid: ele.dbid,
-            type: s18[0].type
-          });
-        });
+        // let a16 = { name: s16[0].name, children: [] };
+        // s16.forEach(ele => {
+        //   a16.children.push({
+        //     name: ele.dbname,
+        //     dbid: ele.dbid,
+        //     type: s16[0].type
+        //   });
+        // });
+        // let a17 = { name: s17[0].name, children: [] };
+        // s17.forEach(ele => {
+        //   a17.children.push({
+        //     name: ele.dbname,
+        //     dbid: ele.dbid,
+        //     type: s17[0].type
+        //   });
+        // });
+        // let a18 = { name: s18[0].name, children: [] };
+        // s18.forEach(ele => {
+        //   a18.children.push({
+        //     name: ele.dbname,
+        //     dbid: ele.dbid,
+        //     type: s18[0].type
+        //   });
+        // });
         // rf
-        let a19 = { name: s19[0].name, children: [] };
-        s19.forEach(ele => {
-          a19.children.push({
-            name: ele.dbname,
-            dbid: ele.dbid,
-            type: s19[0].type
-          });
-        });
+        // let a19 = { name: s19[0].name, children: [] };
+        // s19.forEach(ele => {
+        //   a19.children.push({
+        //     name: ele.dbname,
+        //     dbid: ele.dbid,
+        //     type: s19[0].type
+        //   });
+        // });
         this.data11.push(a, a1);
         this.data12.push(a2, a3, a4);
         this.data13.push(a5, a6, a7);
         this.data14.push(a8, a9, a10);
         this.data15.push(a11, a12, a13);
         this.data16.push(a14, a15);
-        this.data17.push(a16, a17, a18);
-        this.data19.push(a19);
+        // this.data17.push(a16, a17, a18);
+        // this.data19.push(a19);
       });
     },
     // 切换楼层时
     getDifferentBim() {
       getAlmEvents(this.building, this.floor)
-        .then(res => {
+        .then((res) => {
           if (res.code === "200") {
             const key = `B${this.building}F${this.floor}`;
             const obj = fireObj();
@@ -2132,9 +2145,9 @@ export default {
               this.cradevent2 = false;
               this.cradevent3 = false;
             }
-            arr.forEach(i => {
+            arr.forEach((i) => {
               i.forEach((v, k) => {
-                res.data.forEach(id => {
+                res.data.forEach((id) => {
                   if (id === k) {
                     this.alarmId.push(v);
                   }
@@ -2150,7 +2163,7 @@ export default {
         });
     },
     //4 一层
-    handleChange1: function(e) {
+    handleChange1: function (e) {
       console.log(e);
       if (e.name === "枪式摄像机") {
         this.cradevent1 = false;
@@ -2175,7 +2188,7 @@ export default {
       }
       if (e.type === "2") {
         this.clickMethod([0, Number(e.dbid)]);
-        getWarmAHUList(this.building, this.floor).then(res => {
+        getWarmAHUList(this.building, this.floor).then((res) => {
           console.log(12345, this.building, this.floor, res);
           if (res.data) {
             this.videoIsShow = false;
@@ -2186,7 +2199,7 @@ export default {
       }
     },
     //4 二层
-    handleChange2: function(e) {
+    handleChange2: function (e) {
       if (e.name === "枪式摄像机") {
         this.cradevent1 = false;
         this.cradevent2 = true;
@@ -2212,7 +2225,7 @@ export default {
       }
       if (e.type === "2") {
         this.clickMethod([0, Number(e.dbid)]);
-        getWarmAHUList(this.building, this.floor).then(res => {
+        getWarmAHUList(this.building, this.floor).then((res) => {
           if (res.data) {
             this.ahu2IsShow = true;
             this.videoIsShow = false;
@@ -2228,7 +2241,7 @@ export default {
         const dataMap = arr[key];
         dataMap[0].forEach((v, k) => {
           if (Number(e.dbid) === v) {
-            getVAVList(this.building, this.floor).then(res => {
+            getVAVList(this.building, this.floor).then((res) => {
               this.vavData = res.data[k];
               if (res.data[k]) {
                 this.vavIsShow = true;
@@ -2241,7 +2254,7 @@ export default {
       }
     },
     //4 三层
-    handleChange3: function(e) {
+    handleChange3: function (e) {
       console.log(e);
       if (e.name === "枪式摄像机") {
         this.cradevent1 = false;
@@ -2273,7 +2286,7 @@ export default {
           this.ahu1IsShow = true;
           this.vavIsShow = false;
           this.videoIsShow = false;
-          getWarmAHUList(this.building, this.floor).then(res => {
+          getWarmAHUList(this.building, this.floor).then((res) => {
             if (res.data) {
               this.ahu1Data = res.data;
             }
@@ -2284,7 +2297,7 @@ export default {
           this.ahu2IsShow = true;
           this.vavIsShow = false;
           this.videoIsShow = false;
-          getWarmAHUList(this.building, this.floor).then(res => {
+          getWarmAHUList(this.building, this.floor).then((res) => {
             if (res.data) {
               this.ahu2Data = res.data;
             }
@@ -2298,7 +2311,7 @@ export default {
         const dataMap = arr[key];
         dataMap[0].forEach((v, k) => {
           if (Number(e.dbid) === v) {
-            getVAVList(this.building, this.floor).then(res => {
+            getVAVList(this.building, this.floor).then((res) => {
               this.vavData = res.data[k];
               if (res.data[k]) {
                 this.ahu1IsShow = false;
@@ -2312,7 +2325,7 @@ export default {
       }
     },
     //4 四层 八层
-    handleChange4: function(e) {
+    handleChange4: function (e) {
       console.log(e);
       if (e.name === "枪式摄像机") {
         this.cradevent1 = false;
@@ -2344,7 +2357,7 @@ export default {
           this.vavIsShow = false;
           this.ahu2IsShow = false;
           this.ahu1IsShow = true;
-          getWarmAHUList(this.building, this.floor).then(res => {
+          getWarmAHUList(this.building, this.floor).then((res) => {
             if (res.data) {
               this.ahu1Data = res.data;
             }
@@ -2355,7 +2368,7 @@ export default {
           this.vavIsShow = false;
           this.ahu1IsShow = false;
           this.ahu2IsShow = true;
-          getWarmAHUList(this.building, this.floor).then(res => {
+          getWarmAHUList(this.building, this.floor).then((res) => {
             if (res.data) {
               this.ahu2Data = res.data;
             }
@@ -2369,7 +2382,7 @@ export default {
         const dataMap = arr[key];
         dataMap[0].forEach((v, k) => {
           if (Number(e.dbid) === v) {
-            getVAVList(this.building, this.floor).then(res => {
+            getVAVList(this.building, this.floor).then((res) => {
               this.vavData = res.data[k];
               if (res.data[k]) {
                 this.videoIsShow = false;
@@ -2383,7 +2396,7 @@ export default {
       }
     },
     //4 五层 六层 七层
-    handleChange5: function(e) {
+    handleChange5: function (e) {
       if (e.name === "枪式摄像机") {
         this.cradevent1 = false;
         this.cradevent2 = true;
@@ -2415,7 +2428,7 @@ export default {
           this.vavIsShow = false;
           this.ahu2IsShow = false;
           this.ahu1IsShow = true;
-          getWarmAHUList(this.building, this.floor).then(res => {
+          getWarmAHUList(this.building, this.floor).then((res) => {
             if (res.data) {
               this.ahu1Data = res.data;
             }
@@ -2426,7 +2439,7 @@ export default {
           this.ahu2IsShow = true;
           this.videoIsShow = false;
           this.vavIsShow = false;
-          getWarmAHUList(this.building, this.floor).then(res => {
+          getWarmAHUList(this.building, this.floor).then((res) => {
             if (res.data) {
               this.ahu2Data = res.data;
             }
@@ -2440,7 +2453,7 @@ export default {
         const dataMap = arr[key];
         dataMap[0].forEach((v, k) => {
           if (Number(e.dbid) === v) {
-            getVAVList(this.building, this.floor).then(res => {
+            getVAVList(this.building, this.floor).then((res) => {
               this.vavData = res.data[k];
               if (res.data[k]) {
                 this.videoIsShow = false;
@@ -2454,7 +2467,7 @@ export default {
       }
     },
     //4 负一层
-    handleChange6: function(e) {
+    handleChange6: function (e) {
       if (e.name === "枪式摄像机") {
         this.cradevent1 = false;
         this.cradevent2 = true;
@@ -2477,7 +2490,7 @@ export default {
       }
     },
     //4 负二层
-    handleChange7: function(e) {
+    handleChange7: function (e) {
       if (e.name === "枪式摄像机") {
         this.cradevent1 = false;
         this.cradevent2 = true;
@@ -2498,9 +2511,13 @@ export default {
         this.videoIsShow = true;
         this._getTurnRtspToRtmp(Number(e.dbid));
       }
+      if (e.type === "4") {
+        this.videoIsShow = false;
+        this.clickMethod([0, Number(e.dbid)]);
+      }
     },
     //4 负三层
-    handleChange8: function(e) {
+    handleChange8: function (e) {
       if (e.name === "枪式摄像机") {
         this.cradevent1 = false;
         this.cradevent2 = true;
@@ -2523,7 +2540,7 @@ export default {
       }
     },
     //4 负四层
-    handleChange9: function(e) {
+    handleChange9: function (e) {
       if (e.name === "枪式摄像机") {
         this.cradevent1 = false;
         this.cradevent2 = true;
@@ -2546,7 +2563,7 @@ export default {
       }
     },
     //4 整栋
-    handleChange10: function(e) {
+    handleChange10: function (e) {
       if (e.name === "枪式摄像机") {
         this.cradevent1 = false;
         this.cradevent2 = true;
@@ -2588,7 +2605,7 @@ export default {
       }
     },
     //3 1
-    handleChange11: function(e) {
+    handleChange11: function (e) {
       if (e.name === "枪式摄像机") {
         this.cradevent1 = false;
         this.cradevent2 = true;
@@ -2613,7 +2630,7 @@ export default {
       }
       if (e.type === "2") {
         this.clickMethod([0, Number(e.dbid)]);
-        getWarmAHUList(this.building, this.floor).then(res => {
+        getWarmAHUList(this.building, this.floor).then((res) => {
           console.log(12345, this.building, this.floor, res);
           if (res.data) {
             this.videoIsShow = false;
@@ -2624,7 +2641,7 @@ export default {
       }
     },
     //3 2
-    handleChange12: function(e) {
+    handleChange12: function (e) {
       if (e.name === "枪式摄像机") {
         this.cradevent1 = false;
         this.cradevent2 = true;
@@ -2654,7 +2671,7 @@ export default {
           this.ahu2IsShow = true;
           this.vavIsShow = false;
           this.videoIsShow = false;
-          getWarmAHUList(this.building, this.floor).then(res => {
+          getWarmAHUList(this.building, this.floor).then((res) => {
             if (res.data) {
               this.ahu2Data = res.data;
             }
@@ -2668,7 +2685,7 @@ export default {
         const dataMap = arr[key];
         dataMap[0].forEach((v, k) => {
           if (Number(e.dbid) === v) {
-            getVAVList(this.building, this.floor).then(res => {
+            getVAVList(this.building, this.floor).then((res) => {
               this.vavData = res.data[k];
               if (res.data[k]) {
                 this.videoIsShow = false;
@@ -2681,7 +2698,7 @@ export default {
       }
     },
     //3 12
-    handleChange13: function(e) {
+    handleChange13: function (e) {
       if (e.name === "枪式摄像机") {
         this.cradevent1 = false;
         this.cradevent2 = true;
@@ -2707,7 +2724,7 @@ export default {
       }
       if (e.type === "2") {
         this.clickMethod([0, Number(e.dbid)]);
-        getWarmAHUList(this.building, this.floor).then(res => {
+        getWarmAHUList(this.building, this.floor).then((res) => {
           console.log(12345, this.building, this.floor, res);
           if (res.data) {
             this.videoIsShow = false;
@@ -2724,7 +2741,7 @@ export default {
         const dataMap = arr[key];
         dataMap[0].forEach((v, k) => {
           if (Number(e.dbid) === v) {
-            getVAVList(this.building, this.floor).then(res => {
+            getVAVList(this.building, this.floor).then((res) => {
               this.vavData = res.data[k];
               if (res.data[k]) {
                 this.videoIsShow = false;
@@ -2737,7 +2754,7 @@ export default {
       }
     },
     //3 20
-    handleChange14: function(e) {
+    handleChange14: function (e) {
       if (e.name === "枪式摄像机") {
         this.cradevent1 = false;
         this.cradevent2 = true;
@@ -2763,7 +2780,7 @@ export default {
       }
       if (e.type === "2") {
         this.clickMethod([0, Number(e.dbid)]);
-        getWarmAHUList(this.building, this.floor).then(res => {
+        getWarmAHUList(this.building, this.floor).then((res) => {
           console.log(12345, this.building, this.floor, res);
           if (res.data) {
             this.videoIsShow = false;
@@ -2780,7 +2797,7 @@ export default {
         const dataMap = arr[key];
         dataMap[0].forEach((v, k) => {
           if (Number(e.dbid) === v) {
-            getVAVList(this.building, this.floor).then(res => {
+            getVAVList(this.building, this.floor).then((res) => {
               this.vavData = res.data[k];
               if (res.data[k]) {
                 this.videoIsShow = false;
@@ -2793,7 +2810,7 @@ export default {
       }
     },
     //3 21
-    handleChange15: function(e) {
+    handleChange15: function (e) {
       if (e.name === "枪式摄像机") {
         this.cradevent1 = false;
         this.cradevent2 = true;
@@ -2819,7 +2836,7 @@ export default {
       }
       if (e.type === "2") {
         this.clickMethod([0, Number(e.dbid)]);
-        getWarmAHUList(this.building, this.floor).then(res => {
+        getWarmAHUList(this.building, this.floor).then((res) => {
           console.log(12345, this.building, this.floor, res);
           if (res.data) {
             this.videoIsShow = false;
@@ -2836,7 +2853,7 @@ export default {
         const dataMap = arr[key];
         dataMap[0].forEach((v, k) => {
           if (Number(e.dbid) === v) {
-            getVAVList(this.building, this.floor).then(res => {
+            getVAVList(this.building, this.floor).then((res) => {
               this.vavData = res.data[k];
               if (res.data[k]) {
                 this.vavIsShow = true;
@@ -2849,7 +2866,7 @@ export default {
       }
     },
     //3 22
-    handleChange16: function(e) {
+    handleChange16: function (e) {
       if (e.name === "枪式摄像机") {
         this.cradevent1 = false;
         this.cradevent2 = true;
@@ -2874,7 +2891,7 @@ export default {
       }
       if (e.type === "2") {
         this.clickMethod([0, Number(e.dbid)]);
-        getWarmAHUList(this.building, this.floor).then(res => {
+        getWarmAHUList(this.building, this.floor).then((res) => {
           console.log(12345, this.building, this.floor, res);
           if (res.data) {
             this.videoIsShow = false;
@@ -2885,7 +2902,7 @@ export default {
       }
     },
     //3 0
-    handleChange17: function(e) {
+    handleChange17: function (e) {
       if (e.name === "枪式摄像机") {
         this.cradevent1 = false;
         this.cradevent2 = true;
@@ -2910,7 +2927,7 @@ export default {
       }
       if (e.type === "2") {
         this.clickMethod([0, Number(e.dbid)]);
-        getWarmAHUList(this.building, this.floor).then(res => {
+        getWarmAHUList(this.building, this.floor).then((res) => {
           console.log(12345, this.building, this.floor, res);
           if (res.data) {
             this.videoIsShow = false;
@@ -2941,7 +2958,7 @@ export default {
       }
     },
     //4 rf
-    handleChange18: function(e) {
+    handleChange18: function (e) {
       if (e.name === "枪式摄像机") {
         this.cradevent1 = false;
         this.cradevent2 = true;
@@ -2965,7 +2982,7 @@ export default {
       }
     },
     //3 rf
-    handleChange19: function(e) {
+    handleChange19: function (e) {
       if (e.name === "枪式摄像机") {
         this.cradevent1 = false;
         this.cradevent2 = true;
@@ -2989,7 +3006,7 @@ export default {
       }
     },
     _getTurnRtspToRtmp(id) {
-      getTurnRtspToRtmp(id).then(res => {
+      getTurnRtspToRtmp(id).then((res) => {
         let data = res && res.data && res.data.split("/TV")[1];
         data =
           "http://101.132.169.245:90/live?port=1935&app=myTV&stream=TV" + data;
@@ -3002,7 +3019,7 @@ export default {
       obj.name = "tmp_frame";
       obj.src =
         process.env.NODE_ENV === "development"
-          ? "http://localhost/index.html?id=" +
+          ? "http://101.132.169.245/bim/index.html?id=" +
             JSON.stringify([`B${this.building}F${this.floor}`, ...arr]) +
             "&type=eq_id"
           : "http://101.132.169.245/bim/index.html?id=" +
@@ -3034,7 +3051,7 @@ export default {
             this.ahu2IsShow = false;
           }
           if (id === String(v)) {
-            getWarmAHUList(this.building, this.floor).then(res => {
+            getWarmAHUList(this.building, this.floor).then((res) => {
               if (res.data && v === 5670) {
                 this.ahu2IsShow = true;
                 this.ahu2Data = res.data;
@@ -3122,10 +3139,10 @@ export default {
           }
           if (id === String(v) && (k === "che1" || k === "che2")) {
             const arr = [coldAndHeat1, coldAndHeat2];
-            getColdSourceList("cd").then(res => {
+            getColdSourceList("cd").then((res) => {
               this.coldAndHeatData = [];
-              arr.forEach(key => {
-                key.forEach(item => {
+              arr.forEach((key) => {
+                key.forEach((item) => {
                   item["value"] = res.data[item.id].value;
                 });
               });
@@ -3139,16 +3156,16 @@ export default {
             });
           } else if (id === String(v) && (k === "hhe1" || k === "hhe2")) {
             const arr = [coldAndHeat1, coldAndHeat2];
-            getHeatSourceList("cd").then(res => {
+            getHeatSourceList("cd").then((res) => {
               this.coldAndHeatData = [];
               const mapData = {};
               mapId.forEach((val, key) => {
                 mapData[key] = {
-                  value: res.data[val].value
+                  value: res.data[val].value,
                 };
               });
-              arr.forEach(key => {
-                key.forEach(item => {
+              arr.forEach((key) => {
+                key.forEach((item) => {
                   item["value"] = mapData[item.id].value;
                 });
               });
@@ -3171,7 +3188,7 @@ export default {
             this.vavIsShow = false;
           }
           if (id === String(v)) {
-            getVAVList(this.building, this.floor).then(res => {
+            getVAVList(this.building, this.floor).then((res) => {
               this.vavData = res.data[k];
               if (res.data[k]) {
                 this.vavIsShow = true;
@@ -3185,7 +3202,7 @@ export default {
             this.ahu2IsShow = false;
           }
           if (id === String(v)) {
-            getWarmAHUList(this.building, this.floor).then(res => {
+            getWarmAHUList(this.building, this.floor).then((res) => {
               // 处理id 不规则问题
               let handleData = {};
               const obj1 = {};
@@ -3294,18 +3311,18 @@ export default {
     getFloor4() {
       const f = new Array(22).fill(-1).map((item, index) => ({
         label: `第${index + 1}层`,
-        value: index + 1
+        value: index + 1,
       }));
       this.floors = [
         { label: "整栋", value: 0 },
         ...f,
-        { label: "RF", value: 23 }
+        { label: "RF", value: 23 },
       ];
     },
     getFloor3() {
       const f = new Array(8).fill(-1).map((item, index) => ({
         label: `第${index + 1}层`,
-        value: index + 1
+        value: index + 1,
       }));
       this.floors = [
         { label: "负四层", value: -4 },
@@ -3314,7 +3331,7 @@ export default {
         { label: "负一层", value: -1 },
         { label: "整栋", value: 0 },
         ...f,
-        { label: "RF", value: 9 }
+        { label: "RF", value: 9 },
       ];
     },
     closeInfo() {
@@ -3339,14 +3356,14 @@ export default {
     },
     test() {
       var a = document.getElementsByClassName("el-input__inner");
-      [].slice.call(a).forEach(item => {
+      [].slice.call(a).forEach((item) => {
         item.style.background = "#fff";
         item.style.border = "1px solid #646464";
         item.style.borderRadius = "20px";
         item.style.color = "black";
       });
-    }
-  }
+    },
+  },
 };
 </script>
 

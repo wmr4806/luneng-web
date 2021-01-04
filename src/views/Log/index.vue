@@ -123,6 +123,14 @@ export default {
         {
           id: 5,
           name: '部门模块'
+        },
+        {
+          id: 6,
+          name: '工单模块'
+        },
+        {
+          id: 7,
+          name: '事件模块'
         }
       ],
       resultOptions: [
