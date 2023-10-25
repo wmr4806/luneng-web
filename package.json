@@ -28,7 +28,7 @@
     "clipboard": "2.0.4",
     "codemirror": "5.45.0",
     "compression-webpack-plugin": "^3.1.0",
-    "crypto-js": "3.1.9-1",
+    "crypto-js": "4.2.0",
     "dayjs": "^1.8.25",
     "driver.js": "0.9.5",
     "dropzone": "5.5.1",
